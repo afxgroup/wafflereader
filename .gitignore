@@ -1,0 +1,109 @@
+# Compiled object files
+*.o
+*.obj
+
+# Precompiled Headers
+*.gch
+*.pch
+
+# Libraries
+*.lib
+*.a
+*.la
+*.lo
+
+# Shared objects (shared libraries)
+*.dll
+*.so
+*.so.*
+*.dylib
+
+# Executables
+*.exe
+*.out
+*.app
+*.i*86
+*.x86_64
+*.hex
+
+# Debug files
+*.dSYM/
+*.su
+*.idb
+*.pdb
+
+# Dependency files
+*.d
+
+# CMake
+CMakeFiles/
+CMakeCache.txt
+cmake_install.cmake
+Makefile
+CMakeLists.txt.user
+
+# CodeLite
+*.project
+*.workspace
+
+# CodeWarrior
+*.mcp
+*.mcp.xml
+
+# Sublime Text
+*.sublime-workspace
+*.sublime-project
+
+# Compiled Static Libraries
+*.lib
+*.a
+
+# Compiled Dynamic Libraries
+*.dll
+*.so
+*.dylib
+
+# JetBrains IDEs
+.idea/
+*.iml
+
+# Visual Studio
+.vscode/
+*.code-workspace
+.vs/
+*.vcxproj
+*.vcxproj.filters
+*.vcxproj.user
+*.sln
+
+# Xcode
+*.xcworkspace
+*.xcproj
+*.xcuserstate
+*.xcuserdatad
+*.xcsettings
+*.xcconfig
+*.xcscheme
+*.xcodeproj
+*.xcworkspacedata
+
+# Other IDEs
+*.cproject
+*.project
+*.settings
+*.metadata
+*.loadpath
+*.externalToolBuilders
+*.launch
+*.pydevproject
+*.classpath
+*.factorypath
+*.prefs
+*.tmproj
+*.tm_build_errors
+*.tm_build_results
+*.tm_properties
+
+build/
+waffle
+waffle_nogui
