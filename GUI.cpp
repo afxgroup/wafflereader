@@ -19,10 +19,12 @@
 
 static const char __attribute__((used)) *version = "$VER: Waffle Copy Professional GUI Version 2.8.8 for AmigaOS4 (" __DATE__ ")";
 
+static void __attribute__((constructor (99))) gui_constructor (void) {
+    setenv("LIBGL_NOBANNER", "1", 1);
+}
+
 using namespace ArduinoFloppyReader;
 
-int tracksA[83] = {0}, tracksB[83] = {0};
-int currentTrackA = -1, currentTrackB = -1;
 char fileNameWrite[PATH_MAX] = "", fileNameRead[PATH_MAX] = "";
 bool loadF2DFile = false, loadD2FFile = false;
 pthread_mutex_t arrayMutex; // Mutex to protect the array
@@ -415,7 +417,7 @@ void* readFunction(void* arg) {
     return NULL;
 }
 
-static void StartWrite(std::string portName, bool verify, bool pcw) {
+static void StartWrite(std::string portName, bool verify, bool pcw, int tracksA[83], int tracksB[83]) {
     stopWorking = false;
     if (!std::filesystem::exists(fileNameWrite)) {
         ShowMessage("Write Error", "The selected file doesn't exists! Cannot write the file to floppy disk", "OK");
@@ -485,7 +487,7 @@ static void StartWrite(std::string portName, bool verify, bool pcw) {
     isWriting = false;
 }
 
-static void StartRead(std::string portName, bool verify, bool tracks82) {
+static void StartRead(std::string portName, bool verify, bool tracks82, int tracksA[83], int tracksB[83]) {
     stopWorking = false;
 
     if (fileNameRead[0] == '\0') {
@@ -551,7 +553,6 @@ static void StartRead(std::string portName, bool verify, bool tracks82) {
 }
 
 int main() {
-    setenv("LIBGL_NOBANNER", "1", 1);
     // Initialization
     //--------------------------------------------------------------------------------------
     const int screenWidth = 1024;
@@ -563,6 +564,7 @@ int main() {
     bool writeEditMode = false, readEditMode = false, verify = true, pcw = true, tracks82 = false, hdSelection = false;
     int portIndex = 0, portNumbers = 0, dPortIndex = 0;
     const char *portList[MAX_PORTS];
+    int tracksA[83] = {0}, tracksB[83] = {0};
 
     SetTraceLogLevel(LOG_NONE);
     InitWindow(screenWidth, screenHeight, "WAFFLE-Copy-Professional");
@@ -619,10 +621,10 @@ int main() {
                 if (loadD2FFile)
                     LoadD2FFile();
                 if (isWriting) {
-                    StartWrite(portList[portIndex], verify, pcw);
+                    StartWrite(portList[portIndex], verify, pcw, tracksA, tracksB);
                 }
                 if (isReading) {
-                    StartRead(portList[portIndex], verify, tracks82);
+                    StartRead(portList[portIndex], verify, tracks82, tracksA, tracksB);
                 }
             }
             else
@@ -706,7 +708,7 @@ int main() {
 
             if (GuiCheckBox((Rectangle) { 20, 452, 15, 15 }, "Tracks: 82", &tracks82)) tracks82 = !tracks82;
             if (GuiCheckBox((Rectangle) { 650, 515, 15, 15 }, "HIGH DENSITY DISK SELECTION", &hdSelection)) hdSelection = !hdSelection;
-            GuiLabel((Rectangle){ 50, 510, 150, 25 }, "WAFFLE DRIVE PORT: ");
+            GuiLabel((Rectangle){ 70, 510, 150, 25 }, "WAFFLE DRIVE PORT: ");
             if (!isReading && !isWriting)
                 GuiDropdownBox((Rectangle){ 200, 510, 150, 25 }, TextJoin(portList, portNumbers, ";"), &portIndex, false);
             else

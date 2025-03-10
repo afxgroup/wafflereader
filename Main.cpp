@@ -97,6 +97,8 @@ int main(int argc, char *argv[])
 	/* Now check for required parameters */
 	if (shell_args.comport == NULL)
 	{
+        if (!shell_args.nobanner)
+            printf("\n");
 		printf("Usage: %s %s\n", argv[0], argsTemplate);
 		if (rdargs)
 		{
