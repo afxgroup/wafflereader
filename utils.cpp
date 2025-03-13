@@ -1,9 +1,14 @@
 #include <proto/asl.h>
 #include <proto/dos.h>
 #include <proto/intuition.h>
+#include <intuition/gadgetclass.h>
 
 #include <string.h>
 #include "utils.hpp"
+
+extern Object *Objects[OBJ_MAX];
+#define OBJ(x) Objects[x]
+#define GAD(x) (struct Gadget *) Objects[x]
 
 bool GetASLFilename(const char *title, char *buf, int bufSize, BOOL saveMode) {
     bool res = FALSE;
@@ -15,7 +20,7 @@ bool GetASLFilename(const char *title, char *buf, int bufSize, BOOL saveMode) {
                            ASLFR_DoSaveMode, saveMode,
                            ASLFR_RejectIcons, TRUE,
                            ASLFR_DoPatterns, TRUE,
-                           ASLFR_InitialPattern,  "#?.(adf|scp|img|ima|st|ipf)",
+                           ASLFR_InitialPattern,  FILTER_PATTERN,
                            TAG_DONE)) {
 
             strncpy(buf, freq->fr_Drawer, bufSize - 1);
@@ -43,3 +48,20 @@ int ShowMessage(const char *title, const char *message, const char *button) {
   
     return ret;
 }
+
+#ifdef RAGUI
+void UpdateTrack(int *tracks, int side, int track, int value, struct Window *window) {
+    if (track >= 0 && track < 83) {
+        tracks[track] = value;
+    }
+
+    int trackId;
+    if (side == 0)
+        trackId = OBJ_TRACK_START + track + 1;
+    else
+        trackId = OBJ_TRACK_START + 90 + track;
+
+    SetGadgetAttrs(GAD(trackId), window, NULL, GA_UserData, value, TAG_DONE);
+    RefreshGList(GAD(trackId), window, NULL, 1);
+}
+#endif

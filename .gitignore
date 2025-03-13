@@ -39,7 +39,6 @@
 CMakeFiles/
 CMakeCache.txt
 cmake_install.cmake
-Makefile
 CMakeLists.txt.user
 
 # CodeLite
@@ -105,5 +104,6 @@ CMakeLists.txt.user
 *.tm_properties
 
 build/
-waffle
-waffle_nogui
+Waffle
+Waffle_NoGui
+Waffle_Reaction
