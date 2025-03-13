@@ -39,10 +39,16 @@ More information about Arduino board and how to install and configure the firmwa
     ```sh
     cd wafflereader
     ```
-3. Use the provided Makefile to build the project. Specify `GUI=TRUE` if you want to create the GUI version:
+3. Use the provided Makefile to build the project. Specify `GUI=3D` if you want to create the Raylib GUI version:
     ```sh
-    make GUI=TRUE
-    ```
+    make GUI=3D
+    ```  
+    
+    Specify `GUI=REACTION` if you want to create the Reaction GUI version:
+    ```sh
+    make GUI=3D
+    ```  
+
     Or, to build the command-line version without GUI:
     ```sh
     make
