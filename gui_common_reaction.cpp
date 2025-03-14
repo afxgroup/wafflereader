@@ -341,6 +341,7 @@ void* readFunction(void *args) {
             break;
         case ADFResult::adfrAborted:
             ShowMessage(PROGRAM_NAME, "File aborted", "OK");
+            std::remove(file.c_str());
             break;
         case ADFResult::adfrFileError:
             ShowMessage(PROGRAM_NAME, "Error creating file", "OK");
@@ -358,7 +359,7 @@ void* readFunction(void *args) {
             ShowMessage(PROGRAM_NAME, "Error communicating with the Arduino interface", "OK");
             break;
         default:
-            ShowMessage(PROGRAM_NAME, "An unknown error occured", "OK");
+            ShowMessage(PROGRAM_NAME, "An unknown error occurred", "OK");
             break;
     }
 

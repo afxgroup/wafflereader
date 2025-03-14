@@ -573,7 +573,7 @@ int main( void )
                                         if (portIndex >= 0) {
                                             if (fileNameRead != NULL && !fileNameRead[0] == '\0') {
                                                 if (!isWorking)
-                                                    StartRead(portList[portIndex], verify, pcw, tracksA, tracksB, window);
+                                                    StartRead(portList[portIndex], verify, tracks82, tracksA, tracksB, window);
                                                 else {
                                                     isWorking = FALSE;
                                                 }

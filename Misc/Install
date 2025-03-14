@@ -1,0 +1,59 @@
+(set @default-dest "Work:")
+(set @default-dest-libs "LIBS:")
+
+(complete 0)
+(welcome "Welcome to Waffle Copy Professional\n")
+(complete 10)
+
+(procedure ASK_DEST
+
+    (set #waffle-root-dir
+		(askdir
+			(prompt "Please choose a location for installing Waffle Copy Professional\nA drawer called \"Waffle\" will be created.")
+			(help "Choose where to install Waffle Copy Professional using the controls in the Installer window")
+			(default "Work:")
+		)
+    )
+    (set @default-dest #waffle-root-dir)
+    (set @default-dest (tackon @default-dest "Waffle"))
+    (set @default-dest-res (tackon @default-dest "WaffleUI"))
+) ; ASK_DEST
+
+(procedure INSTALL_MISC
+    (copyfiles
+        (source "Installation_Files/LICENSE")
+        (dest @default-dest)
+    )
+    (copyfiles
+        (source "Installation_Files/WaffleUI")
+        (all)
+        (dest @default-dest-res)
+    )
+) ; procedure INSTALL_EXECUTABLES
+
+
+(ASK_DEST)
+
+(complete 30)
+(copyfiles
+	(prompt "Libraries installation")
+	(help @copyfiles-help)
+	(source "Installation_Files")
+	(choices "clib4.library" "libusb.library")
+	(dest @default-dest-libs)
+	(confirm)
+)
+(complete 50)
+(copyfiles
+	(prompt "Where you want to install Waffle Copy Professional?")
+	(help @copyfiles-help)
+	(source "Installation_Files")
+	(choices "Waffle_Reaction" "Waffle_NoGui" "Waffle")
+	(infos)
+	(dest @default-dest)
+	(confirm)
+)
+(complete 70)
+(INSTALL_MISC)
+(complete 100)
+(exit)
