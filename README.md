@@ -46,7 +46,7 @@ More information about Arduino board and how to install and configure the firmwa
     
     Specify `GUI=REACTION` if you want to create the Reaction GUI version:
     ```sh
-    make GUI=3D
+    make GUI=REACTION 
     ```  
 
     Or, to build the command-line version without GUI:
