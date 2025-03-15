@@ -424,8 +424,8 @@ void StartWrite(std::string portName, bool verify, bool pcw, int tracksA[83], in
 
     /* reset tracks */
     for (int i = 0; i < 83; i++) {
-        tracksA[i] = 0;
-        tracksB[i] = 0;
+        UpdateTrack(tracksA, 0, i, 0, window);
+        UpdateTrack(tracksB, 1, i, 0, window);
     }
 
     isWorking = true;
