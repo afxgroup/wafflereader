@@ -7,6 +7,7 @@ This project allows you to read floppy disks using an Arduino. It supports vario
 - Read and write floppy disks
 - Supports multiple disk formats
 - Simple and easy-to-use interface
+- **Multi-language support** with AmigaOS catalog system (Italian, German, French, Dutch, Greek, Spanish, Polish)
 
 ## Requirements
 
@@ -52,6 +53,32 @@ More information about Arduino board and how to install and configure the firmwa
     Or, to build the command-line version without GUI:
     ```sh
     make
+    ```
+
+### Building Localization Catalogs
+
+The project includes support for multiple languages through AmigaOS catalog files. To compile the catalog files:
+
+1. Ensure you have `flexcat` installed on your system
+2. Build all language catalogs:
+    ```sh
+    make catalogs
+    ```
+
+This will generate binary catalog files for all supported languages:
+    - Italian (Locale/italian/waffle.catalog)
+    - German (Locale/german/waffle.catalog)
+    - French (Locale/french/waffle.catalog)
+    - Dutch (Locale/dutch/waffle.catalog)
+    - Greek (Locale/greek/waffle.catalog)
+    - Spanish (Locale/spanish/waffle.catalog)
+    - Polish (Locale/polish/waffle.catalog)
+
+The catalogs are automatically used based on the system's locale settings. If a catalog is not available for the current locale, the program will fall back to English.
+
+To clean up generated files including catalogs:
+    ```sh
+    make clean
     ```
 
 ## License
