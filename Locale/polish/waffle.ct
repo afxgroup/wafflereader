@@ -1,0 +1,340 @@
+## version $VER: waffle.ct 1.0 (27.11.2025) (C) 2025 Andrea Palmate'
+## language polski
+## codeset 0
+;
+MSG_PROGRAM_NAME
+Waffle Copy Professional
+;
+MSG_SELECT_ADF_WRITE
+Wybierz ADF do zapisu na Waffle
+;
+MSG_SELECT_FILE_READ
+Wybierz plik do odczytu z Waffle
+;
+MSG_START_WRITE
+Rozpocznij Zapis
+;
+MSG_START_READ
+Rozpocznij Odczyt
+;
+MSG_STOP
+Stop
+;
+MSG_VERIFY
+Weryfikuj
+;
+MSG_PCW
+PCW
+;
+MSG_TRACKS_82
+Ścieżki: 82
+;
+MSG_HD_DISK_SELECTION
+WYBÓR DYSKU WYSOKIEJ GĘSTOŚCI
+;
+MSG_WAFFLE_DRIVE_PORT
+PORT NAPĘDU WAFFLE: 
+;
+MSG_FILE_TO_DISK
+Plik na Dysk
+;
+MSG_DISK_TO_FILE
+Dysk do Pliku
+;
+MSG_MENU_PROJECT
+Projekt
+;
+MSG_MENU_ABOUT
+A|O programie
+;
+MSG_MENU_QUIT
+Q|Wyjście
+;
+MSG_GROUP_WRITE_ADF
+Zapisz ADF na Dysk
+;
+MSG_GROUP_CREATE_ADF
+Utwórz ADF z Dysku
+;
+MSG_GROUP_UPPER_SIDE
+GÓRNA STRONA
+;
+MSG_GROUP_LOWER_SIDE
+DOLNA STRONA
+;
+MSG_SELECT_FILE_READ_DISK
+Wybierz plik do odczytu z dysku
+;
+MSG_SELECT_FILE_WRITE_DISK
+Wybierz plik do zapisu na dysk
+;
+MSG_82_TRACKS
+82 Ścieżki
+;
+MSG_HIGH_DENSITY_SELECTION
+Wybór dysku wysokiej gęstości
+;
+MSG_WAFFLE_SERIAL_PORT
+Port Szeregowy Waffle
+;
+MSG_ENTER_FILENAME_READ
+Proszę podać nazwę pliku do odczytu
+;
+MSG_ENTER_FILENAME_WRITE
+Proszę podać nazwę pliku do zapisu
+;
+MSG_NO_PORT_SELECTED
+Nie wybrano portu COM
+;
+MSG_ABOUT_TEXT
+Waffle Copy Professional\n\nWersja 2.8.8\n\n(c) 2025 Amigasoft.net\n(c) 2025 Acube Systems
+;
+MSG_BUTTON_OK
+OK
+;
+MSG_BUTTON_RETRY
+Ponów
+;
+MSG_BUTTON_IGNORE
+Ignoruj
+;
+MSG_BUTTON_ABORT
+Przerwij
+;
+MSG_BUTTONS_RETRY_IGNORE_ABORT
+Ponów|Ignoruj|Przerwij
+;
+MSG_ERROR_OPENING_PORT
+Błąd otwierania wybranego portu
+;
+MSG_ERROR_COMM_DRAWBRIDGE
+Błąd komunikacji z interfejsem DrawBridge
+;
+MSG_ERROR_COMM_ARDUINO
+Błąd komunikacji z interfejsem Arduino
+;
+MSG_ERROR_ALLOCATING_MEMORY
+Błąd przydzielania pamięci dla wątku I/O
+;
+MSG_UNABLE_CONNECT_DEVICE
+Nie można połączyć się z urządzeniem: 
+;
+MSG_FILE_DOESNT_EXIST
+Wybrany plik nie istnieje! Nie można zapisać pliku na dyskietce
+;
+MSG_ERROR_OPENING_FILE
+Błąd otwierania pliku
+;
+MSG_ERROR_CREATING_FILE
+Błąd tworzenia pliku
+;
+MSG_ERROR_WRITING_FILE
+Błąd zapisu do pliku
+;
+MSG_FILE_EXT_NOT_RECOGNIZED
+Rozszerzenie pliku nie rozpoznane. Musi być: .ADF, .IMG, .IMA, .ST lub .SCP
+;
+MSG_FILE_EXT_NOT_RECOGNIZED_WRITE
+Rozszerzenie pliku nie rozpoznane. Musi być: .ADF, .IMG, .IMA, .ST, .SCP lub .IPF
+;
+MSG_DISK_WRITE_PROTECTED
+Błąd, dysk jest chroniony przed zapisem
+;
+MSG_DISK_VERIFY_ERROR
+Błąd weryfikacji zapisu dysku na bieżącej ścieżce
+;
+MSG_DISK_CHECKSUM_ERROR
+Dysk ma błędy sumy kontrolnej/brakujące dane.
+;
+MSG_UNABLE_DENSITY
+Nie można określić gęstości włożonego dysku
+;
+MSG_WARNING_VERIFY_RECOMMENDED
+OSTRZEŻENIE: ZDECYDOWANIE zaleca się zapis z włączoną weryfikacją
+;
+MSG_FILE_WRITTEN
+Plik zapisany na dysk
+;
+MSG_FILE_CREATED
+Plik utworzony pomyślnie
+;
+MSG_FILE_WRITTEN_ERRORS
+Plik zapisany na dysk, ale wystąpiły błędy podczas weryfikacji
+;
+MSG_FILE_CREATED_PARTIAL
+Plik utworzony z częściowym powodzeniem
+;
+MSG_WRITING_ABORTED
+Zapis przerwany
+;
+MSG_FILE_ABORTED
+Plik przerwany
+;
+MSG_BAD_SCP_FILE
+Zły, nieprawidłowy lub nieobsługiwany plik SCP
+;
+MSG_EXTENDED_ADF_NOT_SUPPORTED
+Rozszerzone pliki ADF nie są obecnie obsługiwane
+;
+MSG_IPF_ONLY_DD
+Zapis IPF jest obsługiwany tylko dla dysków i obrazów DD
+;
+MSG_SCP_ONLY_DD
+Zapis SCP jest obsługiwany tylko dla dysków i obrazów DD
+;
+MSG_DISK_HD_FILE_DD
+Dysk w napędzie wykryty jako HD, ale dostarczono plik ADF DD
+;
+MSG_DISK_DD_FILE_HD
+Dysk w napędzie wykryty jako DD, ale dostarczono plik ADF HD
+;
+MSG_FIRMWARE_TOO_OLD
+Nie można zapisać tego pliku, musisz najpierw zaktualizować firmware
+;
+MSG_FIRMWARE_V18_REQUIRED
+To wymaga firmware V1.8 lub nowszego
+;
+MSG_FIRMWARE_V18_REQUIRED_DOT
+To wymaga firmware V1.8 lub nowszego.
+;
+MSG_FIRMWARE_V19_REQUIRED
+Ta funkcja wymaga firmware V1.9
+;
+MSG_FIRMWARE_RECOMMEND_V18
+Rob zdecydowanie zaleca aktualizację firmware Arduino do co najmniej V1.8.
+;
+MSG_FIRMWARE_BETTER_READING
+Ta wersja jest jeszcze lepsza w odczycie starych dysków.
+;
+MSG_IPF_LIBRARY_MISSING
+Brak biblioteki IPF CAPSImg od Software Preservation Society
+;
+MSG_UNKNOWN_ERROR
+Wystąpił nieznany błąd 
+;
+MSG_UNKNOWN_ERROR_OCCURRED
+Wystąpił nieznany błąd
+;
+MSG_USAGE
+Użycie: %s %s
+;
+MSG_NO_FILE_SPECIFIED
+Nie określono pliku.
+;
+MSG_WRITING_FILE_TO_DISK
+Zapisywanie pliku %s na dysk
+;
+MSG_CREATING_FILE_FROM_DISK
+Tworzenie pliku %s z dysku
+;
+MSG_PROGRESS
+Postęp: %i%%    
+;
+MSG_CLEANING_COMPLETED
+Cykl czyszczenia zakończony.
+;
+MSG_RUNNING_DIAGNOSTICS
+Uruchamianie diagnostyki na porcie COM: %s
+;
+MSG_DIAGNOSTICS_FAILED
+DIAGNOSTYKA NIEUDANA: %s
+;
+MSG_RUNNING_CLEANING
+Uruchamianie czyszczenia głowicy napędu na porcie COM: %s
+;
+MSG_ATTEMPTING_READ_SETTINGS
+Próba odczytu ustawień z urządzenia na porcie: %s
+;
+MSG_ATTEMPTING_SET_SETTINGS
+Próba ustawienia konfiguracji urządzenia na porcie: %s
+;
+MSG_SETTING_SET
+Ustawienie wykonane. Bieżące ustawienia to:
+;
+MSG_SETTING_NOT_FOUND
+Ustawienie %s nie znalezione.
+;
+MSG_WRITING_TRACK
+Zapis Ścieżki %i, strona %s     
+;
+MSG_READING_TRACK
+Odczyt %s Ścieżka %i, strona %s   
+;
+MSG_READING_TRACK_DETAILED
+Odczyt %s Ścieżka %i, strona %s (próba: %i) - Uzyskano %i/%i sektorów (%i złych znalezionych)   
+;
+MSG_SIDE_UPPER
+Górna
+;
+MSG_SIDE_LOWER
+Dolna
+;
+MSG_DD
+DD
+;
+MSG_HD
+HD
+;
+MSG_DISK_VERIFY_ERROR_PROMPT
+Błąd weryfikacji zapisu dysku na ścieżce %i, strona %s. [R]etry, [S]kip, [A]bort?                                   
+;
+MSG_CHECKSUM_ERROR_PROMPT
+Dysk ma błędy sumy kontrolnej/brakujące dane. [R]etry, [I]gnore, [A]bort?                                      
+;
+MSG_BANNER_LINE1
+DrawBridge aka Arduino Floppy Disk Reader/Writer V2.8.8, Copyright (C) 2017-2022 Robert Smith
+;
+MSG_BANNER_LINE2
+Pełny kod źródłowy i dokumentacja na https://amiga.robsmithdev.co.uk
+;
+MSG_BANNER_LINE3
+To jest wolne oprogramowanie na licencji GNU General Public Licence V3
+;
+MSG_BANNER_LINE4
+Wersja AmigaOS4 autorstwa Andrea Palmate' - os4test@amigasoft.net
+;
+MSG_FLOATING_TEXT
+--- WAFFLE Copy Professional -- Niezbędne rozwiązanie USB floppy drive dla prawdziwego użytkownika Amigi. Pozwala na zapis z plików ADF, odczyt dyskietek jako ADF, IPF, IMA, IMG, ST i format SCP oraz, dzięki specyficznej wersji Emulatora Amigi, jak WinUAE (autorstwa Toni Wilen) lub AmiBerry (autorstwa MiDWaN), działa jak prawdziwy napęd Amiga pozwalając na bezpośredni odczyt i zapis dyskietek przez emulator! Czasami może być potrzebny specjalny kabel USB (typ Y) z możliwością podwójnego zasilania, jeśli port USB komputera nie jest wystarczająco mocny.
+;
+MSG_SETTING_DISKCHANGE_NAME
+DISKCHANGE
+;
+MSG_SETTING_DISKCHANGE_DESC
+Wymuś Obsługę Wykrywania Zmiany Dysku (używane gdy pin 12 nie jest podłączony do GND)
+;
+MSG_SETTING_PLUS_NAME
+PLUS
+;
+MSG_SETTING_PLUS_DESC
+Ustaw Tryb DrawBridge Plus (gdy Pin 4 i 8 są zamienione dla lepszej dokładności)
+;
+MSG_SETTING_ALLDD_NAME
+ALLDD
+;
+MSG_SETTING_ALLDD_DESC
+Wymuś Wykrywanie Wszystkich Dysków jako Podwójna Gęstość (szybsze jeśli nie potrzebujesz obsługi HD)
+;
+MSG_SETTING_SLOW_NAME
+SLOW
+;
+MSG_SETTING_SLOW_DESC
+Użyj Wolniejszego Wyszukiwania Dysku (dla napędów z wolnym ruchem głowicy - rzadkie)
+;
+MSG_SETTING_INDEX_NAME
+INDEX
+;
+MSG_SETTING_INDEX_DESC
+Zawsze Wyrównuj Zapis do Dysków według Indeksu (nie zalecane, chyba że wiesz co robisz)
+;
+MSG_DEBUG_FAILED_LOCK_SCREEN
+Nie udało się zablokować ekranu publicznego
+;
+MSG_ERROR_FAILED_OPEN_WINDOW
+Nie udało się otworzyć okna głównego
+;
+MSG_ERROR_FAILED_CREATE_WINDOW
+Nie udało się utworzyć okna głównego
+;
+MSG_DEBUG_UNKNOWN_GADGET
+Gadget %ld
+;

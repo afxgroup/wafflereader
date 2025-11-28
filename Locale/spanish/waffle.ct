@@ -1,0 +1,340 @@
+## version $VER: waffle.ct 1.0 (27.11.2025) (C) 2025 Andrea Palmate'
+## language español
+## codeset 0
+;
+MSG_PROGRAM_NAME
+Waffle Copy Professional
+;
+MSG_SELECT_ADF_WRITE
+Seleccionar ADF para escribir en Waffle
+;
+MSG_SELECT_FILE_READ
+Seleccionar archivo para leer desde Waffle
+;
+MSG_START_WRITE
+Iniciar Escritura
+;
+MSG_START_READ
+Iniciar Lectura
+;
+MSG_STOP
+Detener
+;
+MSG_VERIFY
+Verificar
+;
+MSG_PCW
+PCW
+;
+MSG_TRACKS_82
+Pistas: 82
+;
+MSG_HD_DISK_SELECTION
+SELECCIÓN DE DISCO DE ALTA DENSIDAD
+;
+MSG_WAFFLE_DRIVE_PORT
+PUERTO DE UNIDAD WAFFLE: 
+;
+MSG_FILE_TO_DISK
+Archivo a Disco
+;
+MSG_DISK_TO_FILE
+Disco a Archivo
+;
+MSG_MENU_PROJECT
+Proyecto
+;
+MSG_MENU_ABOUT
+A|Acerca de
+;
+MSG_MENU_QUIT
+Q|Salir
+;
+MSG_GROUP_WRITE_ADF
+Escribir ADF en Disco
+;
+MSG_GROUP_CREATE_ADF
+Crear ADF desde Disco
+;
+MSG_GROUP_UPPER_SIDE
+LADO SUPERIOR
+;
+MSG_GROUP_LOWER_SIDE
+LADO INFERIOR
+;
+MSG_SELECT_FILE_READ_DISK
+Seleccionar archivo para leer del disco
+;
+MSG_SELECT_FILE_WRITE_DISK
+Seleccionar archivo para escribir en disco
+;
+MSG_82_TRACKS
+82 Pistas
+;
+MSG_HIGH_DENSITY_SELECTION
+Selección de disco de alta densidad
+;
+MSG_WAFFLE_SERIAL_PORT
+Puerto Serial Waffle
+;
+MSG_ENTER_FILENAME_READ
+Por favor, ingrese el nombre del archivo a leer
+;
+MSG_ENTER_FILENAME_WRITE
+Por favor, ingrese el nombre del archivo a escribir
+;
+MSG_NO_PORT_SELECTED
+No se ha seleccionado ningún puerto COM
+;
+MSG_ABOUT_TEXT
+Waffle Copy Professional\n\nVersión 2.8.8\n\n(c) 2025 Amigasoft.net\n(c) 2025 Acube Systems
+;
+MSG_BUTTON_OK
+OK
+;
+MSG_BUTTON_RETRY
+Reintentar
+;
+MSG_BUTTON_IGNORE
+Ignorar
+;
+MSG_BUTTON_ABORT
+Abortar
+;
+MSG_BUTTONS_RETRY_IGNORE_ABORT
+Reintentar|Ignorar|Abortar
+;
+MSG_ERROR_OPENING_PORT
+Error al abrir el puerto seleccionado
+;
+MSG_ERROR_COMM_DRAWBRIDGE
+Error al comunicarse con la interfaz DrawBridge
+;
+MSG_ERROR_COMM_ARDUINO
+Error al comunicarse con la interfaz Arduino
+;
+MSG_ERROR_ALLOCATING_MEMORY
+Error al asignar memoria para el hilo de E/S
+;
+MSG_UNABLE_CONNECT_DEVICE
+Imposible conectar al dispositivo: 
+;
+MSG_FILE_DOESNT_EXIST
+¡El archivo seleccionado no existe! No se puede escribir el archivo en el disquete
+;
+MSG_ERROR_OPENING_FILE
+Error al abrir archivo
+;
+MSG_ERROR_CREATING_FILE
+Error al crear archivo
+;
+MSG_ERROR_WRITING_FILE
+Error al escribir en archivo
+;
+MSG_FILE_EXT_NOT_RECOGNIZED
+Extensión de archivo no reconocida. Debe ser: .ADF, .IMG, .IMA, .ST o .SCP
+;
+MSG_FILE_EXT_NOT_RECOGNIZED_WRITE
+Extensión de archivo no reconocida. Debe ser: .ADF, .IMG, .IMA, .ST, .SCP o .IPF
+;
+MSG_DISK_WRITE_PROTECTED
+Error, disco protegido contra escritura
+;
+MSG_DISK_VERIFY_ERROR
+Error de verificación de escritura del disco en la pista actual
+;
+MSG_DISK_CHECKSUM_ERROR
+El disco tiene errores de suma de verificación/datos faltantes.
+;
+MSG_UNABLE_DENSITY
+No se puede determinar la densidad del disco insertado
+;
+MSG_WARNING_VERIFY_RECOMMENDED
+ADVERTENCIA: Es MUY recomendable escribir con verificación activada
+;
+MSG_FILE_WRITTEN
+Archivo escrito en disco
+;
+MSG_FILE_CREATED
+Archivo creado con éxito
+;
+MSG_FILE_WRITTEN_ERRORS
+Archivo escrito en disco pero hubo errores durante la verificación
+;
+MSG_FILE_CREATED_PARTIAL
+Archivo creado con éxito parcial
+;
+MSG_WRITING_ABORTED
+Escritura abortada
+;
+MSG_FILE_ABORTED
+Archivo abortado
+;
+MSG_BAD_SCP_FILE
+Archivo SCP incorrecto, inválido o no compatible
+;
+MSG_EXTENDED_ADF_NOT_SUPPORTED
+Los archivos ADF extendidos no están actualmente soportados
+;
+MSG_IPF_ONLY_DD
+La escritura IPF solo es compatible con discos e imágenes DD
+;
+MSG_SCP_ONLY_DD
+La escritura SCP solo es compatible con discos e imágenes DD
+;
+MSG_DISK_HD_FILE_DD
+El disco en la unidad se detectó como HD, pero se suministró un archivo ADF DD
+;
+MSG_DISK_DD_FILE_HD
+El disco en la unidad se detectó como DD, pero se suministró un archivo ADF HD
+;
+MSG_FIRMWARE_TOO_OLD
+No se puede escribir este archivo, primero debe actualizar el firmware
+;
+MSG_FIRMWARE_V18_REQUIRED
+Esto requiere firmware V1.8 o más reciente
+;
+MSG_FIRMWARE_V18_REQUIRED_DOT
+Esto requiere firmware V1.8 o más reciente.
+;
+MSG_FIRMWARE_V19_REQUIRED
+Esta función requiere firmware V1.9
+;
+MSG_FIRMWARE_RECOMMEND_V18
+Rob recomienda encarecidamente actualizar el firmware de su Arduino al menos a V1.8.
+;
+MSG_FIRMWARE_BETTER_READING
+Esa versión es aún mejor para leer discos antiguos.
+;
+MSG_IPF_LIBRARY_MISSING
+Falta la biblioteca IPF CAPSImg de Software Preservation Society
+;
+MSG_UNKNOWN_ERROR
+Ocurrió un error desconocido 
+;
+MSG_UNKNOWN_ERROR_OCCURRED
+Ocurrió un error desconocido
+;
+MSG_USAGE
+Uso: %s %s
+;
+MSG_NO_FILE_SPECIFIED
+No se especificó ningún archivo.
+;
+MSG_WRITING_FILE_TO_DISK
+Escribiendo archivo %s en disco
+;
+MSG_CREATING_FILE_FROM_DISK
+Creando archivo %s desde disco
+;
+MSG_PROGRESS
+Progreso: %i%%    
+;
+MSG_CLEANING_COMPLETED
+Ciclo de limpieza completado.
+;
+MSG_RUNNING_DIAGNOSTICS
+Ejecutando diagnóstico en puerto COM: %s
+;
+MSG_DIAGNOSTICS_FAILED
+DIAGNÓSTICO FALLIDO: %s
+;
+MSG_RUNNING_CLEANING
+Ejecutando limpieza de cabeza de unidad en puerto COM: %s
+;
+MSG_ATTEMPTING_READ_SETTINGS
+Intentando leer configuración desde dispositivo en puerto: %s
+;
+MSG_ATTEMPTING_SET_SETTINGS
+Intentando configurar ajustes en dispositivo en puerto: %s
+;
+MSG_SETTING_SET
+Configuración establecida. Los ajustes actuales son:
+;
+MSG_SETTING_NOT_FOUND
+Configuración %s no encontrada.
+;
+MSG_WRITING_TRACK
+Escribiendo Pista %i, lado %s     
+;
+MSG_READING_TRACK
+Leyendo %s Pista %i, lado %s   
+;
+MSG_READING_TRACK_DETAILED
+Leyendo %s Pista %i, lado %s (reintento: %i) - Obtenidos %i/%i sectores (%i erróneos encontrados)   
+;
+MSG_SIDE_UPPER
+Superior
+;
+MSG_SIDE_LOWER
+Inferior
+;
+MSG_DD
+DD
+;
+MSG_HD
+HD
+;
+MSG_DISK_VERIFY_ERROR_PROMPT
+Error de verificación de escritura del disco en pista %i, lado %s. ¿[R]eintentar, [S]altar, [A]bortar?                                   
+;
+MSG_CHECKSUM_ERROR_PROMPT
+El disco tiene errores de suma de verificación/datos faltantes. ¿[R]eintentar, [I]gnorar, [A]bortar?                                      
+;
+MSG_BANNER_LINE1
+DrawBridge aka Arduino Floppy Disk Reader/Writer V2.8.8, Copyright (C) 2017-2022 Robert Smith
+;
+MSG_BANNER_LINE2
+Código fuente completo y documentación en https://amiga.robsmithdev.co.uk
+;
+MSG_BANNER_LINE3
+Este es software libre licenciado bajo GNU General Public Licence V3
+;
+MSG_BANNER_LINE4
+Versión AmigaOS4 por Andrea Palmate' - os4test@amigasoft.net
+;
+MSG_FLOATING_TEXT
+--- WAFFLE Copy Professional -- La solución esencial de unidad de disquete USB para el verdadero usuario de Amiga. Le permite escribir desde archivos ADF, leer disquetes como formato ADF, IPF, IMA, IMG, ST y SCP y, gracias a una versión específica de Emulador Amiga, como WinUAE (de Toni Wilen) o AmiBerry (de MiDWaN), funciona como una verdadera unidad de disco Amiga permitiéndole leer y escribir directamente sus disquetes a través de un emulador! A veces puede necesitar un cable USB especial (tipo Y) con posibilidad de doble alimentación si el puerto USB del PC no es lo suficientemente potente.
+;
+MSG_SETTING_DISKCHANGE_NAME
+DISKCHANGE
+;
+MSG_SETTING_DISKCHANGE_DESC
+Forzar Soporte de Detección de Cambio de Disco (usado si pin 12 no está conectado a GND)
+;
+MSG_SETTING_PLUS_NAME
+PLUS
+;
+MSG_SETTING_PLUS_DESC
+Establecer Modo DrawBridge Plus (cuando Pin 4 y 8 están intercambiados para mayor precisión)
+;
+MSG_SETTING_ALLDD_NAME
+ALLDD
+;
+MSG_SETTING_ALLDD_DESC
+Forzar Detección de Todos los Discos como Doble Densidad (más rápido si no necesita soporte HD)
+;
+MSG_SETTING_SLOW_NAME
+SLOW
+;
+MSG_SETTING_SLOW_DESC
+Usar Búsqueda de Disco Más Lenta (para unidades de disquete con movimiento lento de cabeza - raro)
+;
+MSG_SETTING_INDEX_NAME
+INDEX
+;
+MSG_SETTING_INDEX_DESC
+Siempre Alinear Escritura a Discos con Índice (no recomendado a menos que sepa lo que está haciendo)
+;
+MSG_DEBUG_FAILED_LOCK_SCREEN
+Fallo al bloquear pantalla pública
+;
+MSG_ERROR_FAILED_OPEN_WINDOW
+Fallo al abrir ventana principal
+;
+MSG_ERROR_FAILED_CREATE_WINDOW
+Fallo al crear ventana principal
+;
+MSG_DEBUG_UNKNOWN_GADGET
+Gadget %ld
+;

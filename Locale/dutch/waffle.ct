@@ -1,0 +1,340 @@
+## version $VER: waffle.ct 1.0 (27.11.2025) (C) 2025 Andrea Palmate'
+## language nederlands
+## codeset 0
+;
+MSG_PROGRAM_NAME
+Waffle Copy Professional
+;
+MSG_SELECT_ADF_WRITE
+Selecteer ADF om naar Waffle te schrijven
+;
+MSG_SELECT_FILE_READ
+Selecteer bestandsnaam om van Waffle te lezen
+;
+MSG_START_WRITE
+Start schrijven
+;
+MSG_START_READ
+Start lezen
+;
+MSG_STOP
+Stop
+;
+MSG_VERIFY
+Verifiëren
+;
+MSG_PCW
+PCW
+;
+MSG_TRACKS_82
+Sporen: 82
+;
+MSG_HD_DISK_SELECTION
+HOGE DICHTHEID DISK SELECTIE
+;
+MSG_WAFFLE_DRIVE_PORT
+WAFFLE DRIVE POORT: 
+;
+MSG_FILE_TO_DISK
+Bestand naar disk
+;
+MSG_DISK_TO_FILE
+Disk naar bestand
+;
+MSG_MENU_PROJECT
+Project
+;
+MSG_MENU_ABOUT
+A|Over
+;
+MSG_MENU_QUIT
+Q|Afsluiten
+;
+MSG_GROUP_WRITE_ADF
+ADF naar disk schrijven
+;
+MSG_GROUP_CREATE_ADF
+ADF van disk maken
+;
+MSG_GROUP_UPPER_SIDE
+BOVENKANT
+;
+MSG_GROUP_LOWER_SIDE
+ONDERKANT
+;
+MSG_SELECT_FILE_READ_DISK
+Selecteer bestand om van disk te lezen
+;
+MSG_SELECT_FILE_WRITE_DISK
+Selecteer bestand om naar disk te schrijven
+;
+MSG_82_TRACKS
+82 sporen
+;
+MSG_HIGH_DENSITY_SELECTION
+Hoge dichtheid disk selectie
+;
+MSG_WAFFLE_SERIAL_PORT
+Waffle seriële poort
+;
+MSG_ENTER_FILENAME_READ
+Voer bestandsnaam in om te lezen
+;
+MSG_ENTER_FILENAME_WRITE
+Voer bestandsnaam in om te schrijven
+;
+MSG_NO_PORT_SELECTED
+Geen COM-poort geselecteerd
+;
+MSG_ABOUT_TEXT
+Waffle Copy Professional\n\nVersie 2.8.8\n\n(c) 2025 Amigasoft.net\n(c) 2025 Acube Systems
+;
+MSG_BUTTON_OK
+OK
+;
+MSG_BUTTON_RETRY
+Opnieuw
+;
+MSG_BUTTON_IGNORE
+Negeren
+;
+MSG_BUTTON_ABORT
+Afbreken
+;
+MSG_BUTTONS_RETRY_IGNORE_ABORT
+Opnieuw|Negeren|Afbreken
+;
+MSG_ERROR_OPENING_PORT
+Fout bij openen van geselecteerde poort
+;
+MSG_ERROR_COMM_DRAWBRIDGE
+Fout bij communicatie met DrawBridge interface
+;
+MSG_ERROR_COMM_ARDUINO
+Fout bij communicatie met Arduino interface
+;
+MSG_ERROR_ALLOCATING_MEMORY
+Fout bij toewijzen van geheugen voor I/O thread
+;
+MSG_UNABLE_CONNECT_DEVICE
+Kan niet verbinden met apparaat: 
+;
+MSG_FILE_DOESNT_EXIST
+Het geselecteerde bestand bestaat niet! Kan bestand niet naar diskette schrijven
+;
+MSG_ERROR_OPENING_FILE
+Fout bij openen van bestand
+;
+MSG_ERROR_CREATING_FILE
+Fout bij aanmaken van bestand
+;
+MSG_ERROR_WRITING_FILE
+Fout bij schrijven naar bestand
+;
+MSG_FILE_EXT_NOT_RECOGNIZED
+Bestandsextensie niet herkend. Moet een van de volgende zijn: .ADF, .IMG, .IMA, .ST of .SCP
+;
+MSG_FILE_EXT_NOT_RECOGNIZED_WRITE
+Bestandsextensie niet herkend. Moet een van de volgende zijn: .ADF, .IMG, .IMA, .ST, .SCP of .IPF
+;
+MSG_DISK_WRITE_PROTECTED
+Fout, disk is schrijfbeveiligd
+;
+MSG_DISK_VERIFY_ERROR
+Disk schrijfverificatiefout op huidige spoor
+;
+MSG_DISK_CHECKSUM_ERROR
+Disk heeft checksumfouten/ontbrekende gegevens.
+;
+MSG_UNABLE_DENSITY
+Kan de dichtheid van de geplaatste disk niet bepalen
+;
+MSG_WARNING_VERIFY_RECOMMENDED
+WAARSCHUWING: Het wordt STERK aanbevolen om met verificatie ingeschakeld te schrijven
+;
+MSG_FILE_WRITTEN
+Bestand naar disk geschreven
+;
+MSG_FILE_CREATED
+Bestand succesvol aangemaakt
+;
+MSG_FILE_WRITTEN_ERRORS
+Bestand naar disk geschreven maar er waren fouten tijdens verificatie
+;
+MSG_FILE_CREATED_PARTIAL
+Bestand gedeeltelijk succesvol aangemaakt
+;
+MSG_WRITING_ABORTED
+Schrijven afgebroken
+;
+MSG_FILE_ABORTED
+Bestand afgebroken
+;
+MSG_BAD_SCP_FILE
+Slecht, ongeldig of niet ondersteund SCP-bestand
+;
+MSG_EXTENDED_ADF_NOT_SUPPORTED
+Uitgebreide ADF-bestanden worden momenteel niet ondersteund
+;
+MSG_IPF_ONLY_DD
+IPF schrijven wordt alleen ondersteund voor DD-disks en images
+;
+MSG_SCP_ONLY_DD
+SCP schrijven wordt alleen ondersteund voor DD-disks en images
+;
+MSG_DISK_HD_FILE_DD
+Disk in drive gedetecteerd als HD, maar DD ADF-bestand opgegeven
+;
+MSG_DISK_DD_FILE_HD
+Disk in drive gedetecteerd als DD, maar HD ADF-bestand opgegeven
+;
+MSG_FIRMWARE_TOO_OLD
+Kan dit bestand niet schrijven, u moet eerst de firmware upgraden
+;
+MSG_FIRMWARE_V18_REQUIRED
+Vereist firmware V1.8 of nieuwer
+;
+MSG_FIRMWARE_V18_REQUIRED_DOT
+Vereist firmware V1.8 of nieuwer.
+;
+MSG_FIRMWARE_V19_REQUIRED
+Deze functie vereist firmware V1.9
+;
+MSG_FIRMWARE_RECOMMEND_V18
+Rob beveelt sterk aan om de firmware op uw Arduino bij te werken naar minimaal V1.8.
+;
+MSG_FIRMWARE_BETTER_READING
+Die versie is nog beter in het lezen van oude disks.
+;
+MSG_IPF_LIBRARY_MISSING
+IPF CAPSImg van Software Preservation Society bibliotheek ontbreekt
+;
+MSG_UNKNOWN_ERROR
+Een onbekende fout is opgetreden 
+;
+MSG_UNKNOWN_ERROR_OCCURRED
+Een onbekende fout is opgetreden
+;
+MSG_USAGE
+Gebruik: %s %s
+;
+MSG_NO_FILE_SPECIFIED
+Geen bestand opgegeven.
+;
+MSG_WRITING_FILE_TO_DISK
+Schrijf %s bestand naar disk
+;
+MSG_CREATING_FILE_FROM_DISK
+Maak %s bestand van disk
+;
+MSG_PROGRESS
+Voortgang: %i%%    
+;
+MSG_CLEANING_COMPLETED
+Reinigingscyclus voltooid.
+;
+MSG_RUNNING_DIAGNOSTICS
+Diagnostiek uitvoeren op COM-poort: %s
+;
+MSG_DIAGNOSTICS_FAILED
+DIAGNOSTIEK MISLUKT: %s
+;
+MSG_RUNNING_CLEANING
+Drive head reiniging uitvoeren op COM-poort: %s
+;
+MSG_ATTEMPTING_READ_SETTINGS
+Poging om instellingen van apparaat op poort te lezen: %s
+;
+MSG_ATTEMPTING_SET_SETTINGS
+Poging om instellingen op apparaat op poort in te stellen: %s
+;
+MSG_SETTING_SET
+Instelling ingesteld. Huidige instellingen zijn nu:
+;
+MSG_SETTING_NOT_FOUND
+Instelling %s niet gevonden.
+;
+MSG_WRITING_TRACK
+Schrijf spoor %i, %s kant     
+;
+MSG_READING_TRACK
+Lees %s spoor %i, %s kant   
+;
+MSG_READING_TRACK_DETAILED
+Lees %s spoor %i, %s kant (poging: %i) - Verkregen %i/%i sectoren (%i slechte gevonden)   
+;
+MSG_SIDE_UPPER
+Boven
+;
+MSG_SIDE_LOWER
+Onder
+;
+MSG_DD
+DD
+;
+MSG_HD
+HD
+;
+MSG_DISK_VERIFY_ERROR_PROMPT
+Disk schrijfverificatiefout op spoor %i, %s kant. [O]pnieuw, [S]laan over, [A]fbreken?                                   
+;
+MSG_CHECKSUM_ERROR_PROMPT
+Disk heeft checksumfouten/ontbrekende gegevens. [O]pnieuw, [N]egeren, [A]fbreken?                                      
+;
+MSG_BANNER_LINE1
+DrawBridge aka Arduino Floppy Disk Reader/Writer V2.8.8, Copyright (C) 2017-2022 Robert Smith
+;
+MSG_BANNER_LINE2
+Volledige broncode en documentatie op https://amiga.robsmithdev.co.uk
+;
+MSG_BANNER_LINE3
+Dit is vrije software gelicenseerd onder de GNU General Public Licence V3
+;
+MSG_BANNER_LINE4
+AmigaOS4 versie door Andrea Palmate' - os4test@amigasoft.net
+;
+MSG_FLOATING_TEXT
+--- WAFFLE Copy Professional -- De essentiële USB diskettedrive oplossing voor de echte Amiga gebruiker. Stelt u in staat om van ADF-bestanden te schrijven, diskettes te lezen als ADF, IPF, IMA, IMG, ST en SCP formaat en, dankzij een specifieke versie Amiga Emulator, zoals WinUAE (door Toni Wilen) of AmiBerry (door MiDWaN), werkt het als een echte Amiga drive waarmee u direct uw diskettes kunt lezen en schrijven via een emulator! Soms heeft u mogelijk een speciale USB-kabel (Y-Type) nodig met dubbele voeding als de USB-poort van de PC niet krachtig genoeg is.
+;
+MSG_SETTING_DISKCHANGE_NAME
+DISKCHANGE
+;
+MSG_SETTING_DISKCHANGE_DESC
+Forceer DiskChange detectie ondersteuning (gebruikt als pin 12 niet verbonden is met GND)
+;
+MSG_SETTING_PLUS_NAME
+PLUS
+;
+MSG_SETTING_PLUS_DESC
+Stel DrawBridge Plus modus in (wanneer pin 4 en 8 verwisseld zijn voor verbeterde nauwkeurigheid)
+;
+MSG_SETTING_ALLDD_NAME
+ALLDD
+;
+MSG_SETTING_ALLDD_DESC
+Forceer alle disks te detecteren als dubbele dichtheid (sneller als u geen HD-ondersteuning nodig heeft)
+;
+MSG_SETTING_SLOW_NAME
+SLOW
+;
+MSG_SETTING_SLOW_DESC
+Gebruik langzamer disk zoeken (voor diskdrives met trage kop - zeldzaam)
+;
+MSG_SETTING_INDEX_NAME
+INDEX
+;
+MSG_SETTING_INDEX_DESC
+Schrijven naar disks altijd index-uitlijnen (niet aanbevolen tenzij u weet wat u doet)
+;
+MSG_DEBUG_FAILED_LOCK_SCREEN
+Kan openbaar scherm niet vergrendelen
+;
+MSG_ERROR_FAILED_OPEN_WINDOW
+Kan hoofdvenster niet openen
+;
+MSG_ERROR_FAILED_CREATE_WINDOW
+Kan hoofdvenster niet aanmaken
+;
+MSG_DEBUG_UNKNOWN_GADGET
+Gadget %ld
+;

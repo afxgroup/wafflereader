@@ -1,0 +1,340 @@
+## version $VER: waffle.ct 1.0 (27.11.2025) (C) 2025 Andrea Palmate'
+## language ελληνικά
+## codeset 0
+;
+MSG_PROGRAM_NAME
+Waffle Copy Professional
+;
+MSG_SELECT_ADF_WRITE
+Επιλέξτε ADF για εγγραφή στο Waffle
+;
+MSG_SELECT_FILE_READ
+Επιλέξτε όνομα αρχείου για ανάγνωση από Waffle
+;
+MSG_START_WRITE
+Έναρξη εγγραφής
+;
+MSG_START_READ
+Έναρξη ανάγνωσης
+;
+MSG_STOP
+Στοπ
+;
+MSG_VERIFY
+Επαλήθευση
+;
+MSG_PCW
+PCW
+;
+MSG_TRACKS_82
+Κομμάτια: 82
+;
+MSG_HD_DISK_SELECTION
+ΕΠΙΛΟΓΗ ΔΙΣΚΟΥ ΥΨΗΛΗΣ ΠΥΚΝΟΤΗΤΑΣ
+;
+MSG_WAFFLE_DRIVE_PORT
+ΘΥΡΑ ΜΟΝΑΔΑΣ WAFFLE: 
+;
+MSG_FILE_TO_DISK
+Αρχείο σε δίσκο
+;
+MSG_DISK_TO_FILE
+Δίσκος σε αρχείο
+;
+MSG_MENU_PROJECT
+Έργο
+;
+MSG_MENU_ABOUT
+A|Σχετικά
+;
+MSG_MENU_QUIT
+Q|Έξοδος
+;
+MSG_GROUP_WRITE_ADF
+Εγγραφή ADF σε δίσκο
+;
+MSG_GROUP_CREATE_ADF
+Δημιουργία ADF από δίσκο
+;
+MSG_GROUP_UPPER_SIDE
+ΑΝΩΤΕΡΗ ΠΛΕΥΡΑ
+;
+MSG_GROUP_LOWER_SIDE
+ΚΑΤΩΤΕΡΗ ΠΛΕΥΡΑ
+;
+MSG_SELECT_FILE_READ_DISK
+Επιλέξτε αρχείο για ανάγνωση από δίσκο
+;
+MSG_SELECT_FILE_WRITE_DISK
+Επιλέξτε αρχείο για εγγραφή σε δίσκο
+;
+MSG_82_TRACKS
+82 κομμάτια
+;
+MSG_HIGH_DENSITY_SELECTION
+Επιλογή δίσκου υψηλής πυκνότητας
+;
+MSG_WAFFLE_SERIAL_PORT
+Σειριακή θύρα Waffle
+;
+MSG_ENTER_FILENAME_READ
+Παρακαλώ εισάγετε όνομα αρχείου για ανάγνωση
+;
+MSG_ENTER_FILENAME_WRITE
+Παρακαλώ εισάγετε όνομα αρχείου για εγγραφή
+;
+MSG_NO_PORT_SELECTED
+Δεν επιλέχθηκε θύρα COM
+;
+MSG_ABOUT_TEXT
+Waffle Copy Professional\n\nΈκδοση 2.8.8\n\n(c) 2025 Amigasoft.net\n(c) 2025 Acube Systems
+;
+MSG_BUTTON_OK
+OK
+;
+MSG_BUTTON_RETRY
+Επανάληψη
+;
+MSG_BUTTON_IGNORE
+Αγνόηση
+;
+MSG_BUTTON_ABORT
+Ακύρωση
+;
+MSG_BUTTONS_RETRY_IGNORE_ABORT
+Επανάληψη|Αγνόηση|Ακύρωση
+;
+MSG_ERROR_OPENING_PORT
+Σφάλμα ανοίγματος επιλεγμένης θύρας
+;
+MSG_ERROR_COMM_DRAWBRIDGE
+Σφάλμα επικοινωνίας με τη διεπαφή DrawBridge
+;
+MSG_ERROR_COMM_ARDUINO
+Σφάλμα επικοινωνίας με τη διεπαφή Arduino
+;
+MSG_ERROR_ALLOCATING_MEMORY
+Σφάλμα εκχώρησης μνήμης για το νήμα I/O
+;
+MSG_UNABLE_CONNECT_DEVICE
+Αδυναμία σύνδεσης με συσκευή: 
+;
+MSG_FILE_DOESNT_EXIST
+Το επιλεγμένο αρχείο δεν υπάρχει! Αδύνατη η εγγραφή του αρχείου στη δισκέτα
+;
+MSG_ERROR_OPENING_FILE
+Σφάλμα ανοίγματος αρχείου
+;
+MSG_ERROR_CREATING_FILE
+Σφάλμα δημιουργίας αρχείου
+;
+MSG_ERROR_WRITING_FILE
+Σφάλμα εγγραφής σε αρχείο
+;
+MSG_FILE_EXT_NOT_RECOGNIZED
+Η επέκταση αρχείου δεν αναγνωρίστηκε. Πρέπει να είναι: .ADF, .IMG, .IMA, .ST ή .SCP
+;
+MSG_FILE_EXT_NOT_RECOGNIZED_WRITE
+Η επέκταση αρχείου δεν αναγνωρίστηκε. Πρέπει να είναι: .ADF, .IMG, .IMA, .ST, .SCP ή .IPF
+;
+MSG_DISK_WRITE_PROTECTED
+Σφάλμα, ο δίσκος είναι προστατευμένος από εγγραφή
+;
+MSG_DISK_VERIFY_ERROR
+Σφάλμα επαλήθευσης εγγραφής δίσκου στο τρέχον κομμάτι
+;
+MSG_DISK_CHECKSUM_ERROR
+Ο δίσκος έχει σφάλματα αθροίσματος ελέγχου/λείπουν δεδομένα.
+;
+MSG_UNABLE_DENSITY
+Αδυναμία προσδιορισμού της πυκνότητας του δίσκου που εισήχθη
+;
+MSG_WARNING_VERIFY_RECOMMENDED
+ΠΡΟΕΙΔΟΠΟΙΗΣΗ: Συνιστάται ΕΝΤΟΝΑ η εγγραφή με ενεργοποιημένη επαλήθευση
+;
+MSG_FILE_WRITTEN
+Το αρχείο γράφτηκε στο δίσκο
+;
+MSG_FILE_CREATED
+Το αρχείο δημιουργήθηκε επιτυχώς
+;
+MSG_FILE_WRITTEN_ERRORS
+Το αρχείο γράφτηκε στο δίσκο αλλά υπήρξαν σφάλματα κατά την επαλήθευση
+;
+MSG_FILE_CREATED_PARTIAL
+Το αρχείο δημιουργήθηκε με μερική επιτυχία
+;
+MSG_WRITING_ABORTED
+Η εγγραφή ματαιώθηκε
+;
+MSG_FILE_ABORTED
+Το αρχείο ματαιώθηκε
+;
+MSG_BAD_SCP_FILE
+Εσφαλμένο, μη έγκυρο ή μη υποστηριζόμενο αρχείο SCP
+;
+MSG_EXTENDED_ADF_NOT_SUPPORTED
+Τα εκτεταμένα αρχεία ADF δεν υποστηρίζονται επί του παρόντος
+;
+MSG_IPF_ONLY_DD
+Η εγγραφή IPF υποστηρίζεται μόνο για δίσκους και εικόνες DD
+;
+MSG_SCP_ONLY_DD
+Η εγγραφή SCP υποστηρίζεται μόνο για δίσκους και εικόνες DD
+;
+MSG_DISK_HD_FILE_DD
+Ο δίσκος στη μονάδα ανιχνεύθηκε ως HD, αλλά παρέχεται αρχείο ADF DD
+;
+MSG_DISK_DD_FILE_HD
+Ο δίσκος στη μονάδα ανιχνεύθηκε ως DD, αλλά παρέχεται αρχείο ADF HD
+;
+MSG_FIRMWARE_TOO_OLD
+Αδυναμία εγγραφής αυτού του αρχείου, πρέπει πρώτα να αναβαθμίσετε το firmware
+;
+MSG_FIRMWARE_V18_REQUIRED
+Απαιτεί firmware V1.8 ή νεότερο
+;
+MSG_FIRMWARE_V18_REQUIRED_DOT
+Απαιτεί firmware V1.8 ή νεότερο.
+;
+MSG_FIRMWARE_V19_REQUIRED
+Αυτή η λειτουργία απαιτεί firmware V1.9
+;
+MSG_FIRMWARE_RECOMMEND_V18
+Ο Rob συνιστά ανεπιφύλακτα την αναβάθμιση του firmware του Arduino σας τουλάχιστον στην V1.8.
+;
+MSG_FIRMWARE_BETTER_READING
+Αυτή η έκδοση είναι ακόμα καλύτερη στην ανάγνωση παλιών δίσκων.
+;
+MSG_IPF_LIBRARY_MISSING
+Λείπει η βιβλιοθήκη IPF CAPSImg από τη Software Preservation Society
+;
+MSG_UNKNOWN_ERROR
+Προέκυψε άγνωστο σφάλμα 
+;
+MSG_UNKNOWN_ERROR_OCCURRED
+Προέκυψε άγνωστο σφάλμα
+;
+MSG_USAGE
+Χρήση: %s %s
+;
+MSG_NO_FILE_SPECIFIED
+Δεν καθορίστηκε αρχείο.
+;
+MSG_WRITING_FILE_TO_DISK
+Εγγραφή αρχείου %s στο δίσκο
+;
+MSG_CREATING_FILE_FROM_DISK
+Δημιουργία αρχείου %s από δίσκο
+;
+MSG_PROGRESS
+Πρόοδος: %i%%    
+;
+MSG_CLEANING_COMPLETED
+Ο κύκλος καθαρισμού ολοκληρώθηκε.
+;
+MSG_RUNNING_DIAGNOSTICS
+Εκτέλεση διαγνωστικών στη θύρα COM: %s
+;
+MSG_DIAGNOSTICS_FAILED
+ΤΑ ΔΙΑΓΝΩΣΤΙΚΑ ΑΠΕΤΥΧΑΝ: %s
+;
+MSG_RUNNING_CLEANING
+Εκτέλεση καθαρισμού κεφαλής μονάδας στη θύρα COM: %s
+;
+MSG_ATTEMPTING_READ_SETTINGS
+Προσπάθεια ανάγνωσης ρυθμίσεων από συσκευή στη θύρα: %s
+;
+MSG_ATTEMPTING_SET_SETTINGS
+Προσπάθεια ορισμού ρυθμίσεων σε συσκευή στη θύρα: %s
+;
+MSG_SETTING_SET
+Η ρύθμιση ορίστηκε. Οι τρέχουσες ρυθμίσεις είναι τώρα:
+;
+MSG_SETTING_NOT_FOUND
+Η ρύθμιση %s δεν βρέθηκε.
+;
+MSG_WRITING_TRACK
+Εγγραφή κομματιού %i, %s πλευρά     
+;
+MSG_READING_TRACK
+Ανάγνωση %s κομματιού %i, %s πλευρά   
+;
+MSG_READING_TRACK_DETAILED
+Ανάγνωση %s κομματιού %i, %s πλευρά (επανάληψη: %i) - Ελήφθησαν %i/%i τομείς (%i κακοί βρέθηκαν)   
+;
+MSG_SIDE_UPPER
+Ανώτερη
+;
+MSG_SIDE_LOWER
+Κατώτερη
+;
+MSG_DD
+DD
+;
+MSG_HD
+HD
+;
+MSG_DISK_VERIFY_ERROR_PROMPT
+Σφάλμα επαλήθευσης εγγραφής δίσκου στο κομμάτι %i, %s πλευρά. [Ε]πανάληψη, [Π]αράλειψη, [Α]κύρωση?                                   
+;
+MSG_CHECKSUM_ERROR_PROMPT
+Ο δίσκος έχει σφάλματα αθροίσματος ελέγχου/λείπουν δεδομένα. [Ε]πανάληψη, [Α]γνόηση, [Μ]αταίωση?                                      
+;
+MSG_BANNER_LINE1
+DrawBridge aka Arduino Floppy Disk Reader/Writer V2.8.8, Copyright (C) 2017-2022 Robert Smith
+;
+MSG_BANNER_LINE2
+Πλήρης πηγαίος κώδικας και τεκμηρίωση στο https://amiga.robsmithdev.co.uk
+;
+MSG_BANNER_LINE3
+Αυτό είναι ελεύθερο λογισμικό με άδεια GNU General Public Licence V3
+;
+MSG_BANNER_LINE4
+Έκδοση AmigaOS4 από τον Andrea Palmate' - os4test@amigasoft.net
+;
+MSG_FLOATING_TEXT
+--- WAFFLE Copy Professional -- Η απαραίτητη λύση μονάδας δισκέτας USB για τον πραγματικό χρήστη Amiga. Σας επιτρέπει να γράφετε από αρχεία ADF, να διαβάζετε δισκέτες ως μορφή ADF, IPF, IMA, IMG, ST και SCP και, χάρη σε συγκεκριμένη έκδοση Amiga Emulator, όπως το WinUAE (του Toni Wilen) ή το AmiBerry (του MiDWaN), λειτουργεί σαν πραγματική μονάδα Amiga επιτρέποντάς σας να διαβάζετε και να γράφετε απευθείας τις δισκέτες σας μέσω εξομοιωτή! Μερικές φορές μπορεί να χρειαστείτε ειδικό καλώδιο USB (Τύπου-Y) με δυνατότητα διπλής τροφοδοσίας αν η θύρα USB του υπολογιστή δεν είναι αρκετά ισχυρή.
+;
+MSG_SETTING_DISKCHANGE_NAME
+DISKCHANGE
+;
+MSG_SETTING_DISKCHANGE_DESC
+Επιβολή υποστήριξης ανίχνευσης αλλαγής δίσκου (χρησιμοποιείται αν ο ακροδέκτης 12 δεν είναι συνδεδεμένος στο GND)
+;
+MSG_SETTING_PLUS_NAME
+PLUS
+;
+MSG_SETTING_PLUS_DESC
+Ορισμός λειτουργίας DrawBridge Plus (όταν οι ακροδέκτες 4 και 8 έχουν ανταλλαχθεί για βελτιωμένη ακρίβεια)
+;
+MSG_SETTING_ALLDD_NAME
+ALLDD
+;
+MSG_SETTING_ALLDD_DESC
+Επιβολή ανίχνευσης όλων των δίσκων ως διπλής πυκνότητας (ταχύτερο αν δεν χρειάζεστε υποστήριξη HD)
+;
+MSG_SETTING_SLOW_NAME
+SLOW
+;
+MSG_SETTING_SLOW_DESC
+Χρήση πιο αργής αναζήτησης δίσκου (για μονάδες δισκέτας με αργή κεφαλή - σπάνιο)
+;
+MSG_SETTING_INDEX_NAME
+INDEX
+;
+MSG_SETTING_INDEX_DESC
+Πάντα ευθυγράμμιση εγγραφής δίσκων με ευρετήριο (δεν συνιστάται εκτός αν ξέρετε τι κάνετε)
+;
+MSG_DEBUG_FAILED_LOCK_SCREEN
+Αποτυχία κλειδώματος δημόσιας οθόνης
+;
+MSG_ERROR_FAILED_OPEN_WINDOW
+Αποτυχία ανοίγματος κύριου παραθύρου
+;
+MSG_ERROR_FAILED_CREATE_WINDOW
+Αποτυχία δημιουργίας κύριου παραθύρου
+;
+MSG_DEBUG_UNKNOWN_GADGET
+Gadget %ld
+;
