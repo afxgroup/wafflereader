@@ -102,6 +102,7 @@ CMakeLists.txt.user
 *.tm_build_errors
 *.tm_build_results
 *.tm_properties
+*.catalog
 
 build/
 Waffle

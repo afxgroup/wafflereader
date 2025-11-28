@@ -1,0 +1,341 @@
+; *********************************************************
+; Catalog description file for Waffle
+; $VER: waffle.cd 1.0 (27.11.2025) ©2025 Andrea Palmatè
+; *********************************************************
+;
+MSG_PROGRAM_NAME (//)
+Waffle Copy Professional
+;
+MSG_SELECT_ADF_WRITE (//)
+Select ADF to write to Waffle
+;
+MSG_SELECT_FILE_READ (//)
+Select file name to read from Waffle
+;
+MSG_START_WRITE (//)
+Start Write
+;
+MSG_START_READ (//)
+Start Read
+;
+MSG_STOP (//)
+Stop
+;
+MSG_VERIFY (//)
+Verify
+;
+MSG_PCW (//)
+PCW
+;
+MSG_TRACKS_82 (//)
+Tracks: 82
+;
+MSG_HD_DISK_SELECTION (//)
+HIGH DENSITY DISK SELECTION
+;
+MSG_WAFFLE_DRIVE_PORT (//)
+WAFFLE DRIVE PORT: 
+;
+MSG_FILE_TO_DISK (//)
+File To Disk
+;
+MSG_DISK_TO_FILE (//)
+Disk to File
+;
+MSG_MENU_PROJECT (//)
+Project
+;
+MSG_MENU_ABOUT (//)
+A|About
+;
+MSG_MENU_QUIT (//)
+Q|Quit
+;
+MSG_GROUP_WRITE_ADF (//)
+Write ADF to Disk
+;
+MSG_GROUP_CREATE_ADF (//)
+Create ADF from Disk
+;
+MSG_GROUP_UPPER_SIDE (//)
+UPPER SIDE
+;
+MSG_GROUP_LOWER_SIDE (//)
+LOWER SIDE
+;
+MSG_SELECT_FILE_READ_DISK (//)
+Select file to read from disk
+;
+MSG_SELECT_FILE_WRITE_DISK (//)
+Select file to write to disk
+;
+MSG_82_TRACKS (//)
+82 Tracks
+;
+MSG_HIGH_DENSITY_SELECTION (//)
+High Density disk selection
+;
+MSG_WAFFLE_SERIAL_PORT (//)
+Waffle Serial Port
+;
+MSG_ENTER_FILENAME_READ (//)
+Please enter filename to read
+;
+MSG_ENTER_FILENAME_WRITE (//)
+Please enter filename to write
+;
+MSG_NO_PORT_SELECTED (//)
+No COM port selected
+;
+MSG_ABOUT_TEXT (//)
+Waffle Copy Professional\n\nVersion 2.8.8\n\n(c) 2025 Amigasoft.net\n(c) 2025 Acube Systems
+;
+MSG_BUTTON_OK (//)
+OK
+;
+MSG_BUTTON_RETRY (//)
+Retry
+;
+MSG_BUTTON_IGNORE (//)
+Ignore
+;
+MSG_BUTTON_ABORT (//)
+Abort
+;
+MSG_BUTTONS_RETRY_IGNORE_ABORT (//)
+Retry|Ignore|Abort
+;
+MSG_ERROR_OPENING_PORT (//)
+Error opening selected port
+;
+MSG_ERROR_COMM_DRAWBRIDGE (//)
+Error communicating with the DrawBridge interface
+;
+MSG_ERROR_COMM_ARDUINO (//)
+Error communicating with the Arduino interface
+;
+MSG_ERROR_ALLOCATING_MEMORY (//)
+Error allocating memory for the I/O thread
+;
+MSG_UNABLE_CONNECT_DEVICE (//)
+Unable to connect to device: 
+;
+MSG_FILE_DOESNT_EXIST (//)
+The selected file doesn't exists! Cannot write the file to floppy disk
+;
+MSG_ERROR_OPENING_FILE (//)
+Error opening file
+;
+MSG_ERROR_CREATING_FILE (//)
+Error creating file
+;
+MSG_ERROR_WRITING_FILE (//)
+Error writing to file
+;
+MSG_FILE_EXT_NOT_RECOGNIZED (//)
+File extension not recognised. It must be one of: .ADF, .IMG, .IMA, .ST or .SCP
+;
+MSG_FILE_EXT_NOT_RECOGNIZED_WRITE (//)
+File extension not recognised. It must be one of: .ADF, .IMG, .IMA, .ST, .SCP or .IPF
+;
+MSG_DISK_WRITE_PROTECTED (//)
+Error, disk is write protected
+;
+MSG_DISK_VERIFY_ERROR (//)
+Disk write verify error on current track
+;
+MSG_DISK_CHECKSUM_ERROR (//)
+Disk has checksum errors/missing data.
+;
+MSG_UNABLE_DENSITY (//)
+Unable to work out the density of the disk inserted
+;
+MSG_WARNING_VERIFY_RECOMMENDED (//)
+WARNING: It is STRONGLY recommended to write with verify turned on
+;
+MSG_FILE_WRITTEN (//)
+File written to disk
+;
+MSG_FILE_CREATED (//)
+File created successfully
+;
+MSG_FILE_WRITTEN_ERRORS (//)
+File written to disk but there were errors during verification
+;
+MSG_FILE_CREATED_PARTIAL (//)
+File created with partial success
+;
+MSG_WRITING_ABORTED (//)
+Writing aborted
+;
+MSG_FILE_ABORTED (//)
+File aborted
+;
+MSG_BAD_SCP_FILE (//)
+Bad, invalid or unsupported SCP file
+;
+MSG_EXTENDED_ADF_NOT_SUPPORTED (//)
+Extended ADF files are not currently supported
+;
+MSG_IPF_ONLY_DD (//)
+IPF writing is only supported for DD disks and images
+;
+MSG_SCP_ONLY_DD (//)
+SCP writing is only supported for DD disks and images
+;
+MSG_DISK_HD_FILE_DD (//)
+Disk in drive was detected as HD, but a DD ADF file supplied
+;
+MSG_DISK_DD_FILE_HD (//)
+Disk in drive was detected as DD, but an HD ADF file supplied
+;
+MSG_FIRMWARE_TOO_OLD (//)
+Cannot write this file, you need to upgrade the firmware first
+;
+MSG_FIRMWARE_V18_REQUIRED (//)
+This requires firmware V1.8 or newer
+;
+MSG_FIRMWARE_V18_REQUIRED_DOT (//)
+This requires firmware V1.8 or newer.
+;
+MSG_FIRMWARE_V19_REQUIRED (//)
+This feature requires firmware V1.9
+;
+MSG_FIRMWARE_RECOMMEND_V18 (//)
+Rob strongly recommends updating the firmware on your Arduino to at least V1.8.
+;
+MSG_FIRMWARE_BETTER_READING (//)
+That version is even better at reading old disks.
+;
+MSG_IPF_LIBRARY_MISSING (//)
+IPF CAPSImg from Software Preservation Society Library Missing
+;
+MSG_UNKNOWN_ERROR (//)
+An unknown error occurred 
+;
+MSG_UNKNOWN_ERROR_OCCURRED (//)
+An unknown error occurred
+;
+MSG_USAGE (//)
+Usage: %s %s
+;
+MSG_NO_FILE_SPECIFIED (//)
+No file specified.
+;
+MSG_WRITING_FILE_TO_DISK (//)
+Writing %s file to disk
+;
+MSG_CREATING_FILE_FROM_DISK (//)
+Creating %s file from disk
+;
+MSG_PROGRESS (//)
+Progress: %i%%    
+;
+MSG_CLEANING_COMPLETED (//)
+Cleaning cycle completed.
+;
+MSG_RUNNING_DIAGNOSTICS (//)
+Running diagnostics on COM port: %s
+;
+MSG_DIAGNOSTICS_FAILED (//)
+DIAGNOSTICS FAILED: %s
+;
+MSG_RUNNING_CLEANING (//)
+Running drive head cleaning on COM port: %s
+;
+MSG_ATTEMPTING_READ_SETTINGS (//)
+Attempting to read settings from device on port: %s
+;
+MSG_ATTEMPTING_SET_SETTINGS (//)
+Attempting to set settings to device on port: %s
+;
+MSG_SETTING_SET (//)
+Settng Set.  Current settings are now:
+;
+MSG_SETTING_NOT_FOUND (//)
+Setting %s was not found.
+;
+MSG_WRITING_TRACK (//)
+Writing Track %i, %s side     
+;
+MSG_READING_TRACK (//)
+Reading %s Track %i, %s side   
+;
+MSG_READING_TRACK_DETAILED (//)
+Reading %s Track %i, %s side (retry: %i) - Got %i/%i sectors (%i bad found)   
+;
+MSG_SIDE_UPPER (//)
+Upper
+;
+MSG_SIDE_LOWER (//)
+Lower
+;
+MSG_DD (//)
+DD
+;
+MSG_HD (//)
+HD
+;
+MSG_DISK_VERIFY_ERROR_PROMPT (//)
+Disk write verify error on track %i, %s side. [R]etry, [S]kip, [A]bort?                                   
+;
+MSG_CHECKSUM_ERROR_PROMPT (//)
+Disk has checksum errors/missing data.  [R]etry, [I]gnore, [A]bort?                                      
+;
+MSG_BANNER_LINE1 (//)
+DrawBridge aka Arduino Floppy Disk Reader/Writer V2.8.8, Copyright (C) 2017-2022 Robert Smith
+;
+MSG_BANNER_LINE2 (//)
+Full sourcecode and documentation at https://amiga.robsmithdev.co.uk
+;
+MSG_BANNER_LINE3 (//)
+This is free software licenced under the GNU General Public Licence V3
+;
+MSG_BANNER_LINE4 (//)
+AmigaOS4 version by Andrea Palmate' - os4test@amigasoft.net
+;
+MSG_FLOATING_TEXT (//)
+--- WAFFLE Copy Professional -- The essential USB floppy drive solution for the real Amiga user. It allows you to write from ADF files, to read floppy disks as ADF, IPF, IMA, IMG, ST and SCP format and, thanks to a specific version Amiga Emulator, like WinUAE (by Toni Wilen) or AmiBerry (by MiDWaN),  it works like a real Amiga disk drive allowing you to directly read and write your floppies through an emulator! Sometime you may need a special USB cable (Y-Type) with the possibility of double powering if the USB port of the PC is not powerful enough.
+;
+MSG_SETTING_DISKCHANGE_NAME (//)
+DISKCHANGE
+;
+MSG_SETTING_DISKCHANGE_DESC (//)
+Force DiskChange Detection Support (used if pin 12 is not connected to GND)
+;
+MSG_SETTING_PLUS_NAME (//)
+PLUS
+;
+MSG_SETTING_PLUS_DESC (//)
+Set DrawBridge Plus Mode (when Pin 4 and 8 are swapped for improved accuracy)
+;
+MSG_SETTING_ALLDD_NAME (//)
+ALLDD
+;
+MSG_SETTING_ALLDD_DESC (//)
+Force All Disks to be Detected as Double Density (faster if you don't need HD support)
+;
+MSG_SETTING_SLOW_NAME (//)
+SLOW
+;
+MSG_SETTING_SLOW_DESC (//)
+Use Slower Disk Seeking (for slow head-moving floppy drives - rare)
+;
+MSG_SETTING_INDEX_NAME (//)
+INDEX
+;
+MSG_SETTING_INDEX_DESC (//)
+Always Index-Align Writing to Disks (not recommended unless you know what you are doing)
+;
+MSG_DEBUG_FAILED_LOCK_SCREEN (//)
+Failed to lock public screen
+;
+MSG_ERROR_FAILED_OPEN_WINDOW (//)
+Failed to open main window
+;
+MSG_ERROR_FAILED_CREATE_WINDOW (//)
+Failed to create main window
+;
+MSG_DEBUG_UNKNOWN_GADGET (//)
+Gadget %ld
+;

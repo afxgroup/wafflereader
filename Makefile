@@ -7,7 +7,7 @@ LDFLAGS  := -mcrt=clib4
 LIBS 	 := -lftdi -lcapsimage -athread=native
 STRIP	 := ppc-amigaos-strip
 
-SOURCES := ADFWriter.cpp ArduinoInterface.cpp common.cpp ftdi_impl.cpp ibm_sectors.cpp pll.cpp RotationExtractor.cpp SerialIO.cpp
+SOURCES := ADFWriter.cpp ArduinoInterface.cpp common.cpp ftdi_impl.cpp ibm_sectors.cpp pll.cpp RotationExtractor.cpp SerialIO.cpp locale_support.cpp
 ifeq ($(GUI),3D)
 	SOURCES += utils.cpp gui_common.cpp GUI.cpp
 	CFLAGS += -DGUI

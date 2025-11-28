@@ -37,7 +37,7 @@ void *writeFunction(void *arg)
     ArduinoFloppyReader::FirmwareVersion v;
     if (!taskWriter->openDevice(portName))
     {
-        ShowMessage(PROGRAM_NAME, "Error opening selected port", "OK");
+        ShowMessage(GetString(MSG_PROGRAM_NAME), GetString(MSG_ERROR_OPENING_PORT), GetString(MSG_BUTTON_OK));
         isWorking = false;
         goto out;
     }
@@ -46,7 +46,7 @@ void *writeFunction(void *arg)
     {
         if (!verify)
         {
-            ShowMessage(PROGRAM_NAME, "WARNING: It is STRONGLY recommended to write with verify turned on", "OK");
+            ShowMessage(GetString(MSG_PROGRAM_NAME), GetString(MSG_WARNING_VERIFY_RECOMMENDED), GetString(MSG_BUTTON_OK));
         }
     }
 
@@ -57,7 +57,7 @@ void *writeFunction(void *arg)
         if ((!isSCP) && (!isIPF))
             if (taskWriter->GuessDiskDensity(hdMode) != ArduinoFloppyReader::ADFResult::adfrComplete)
             {
-                ShowMessage(PROGRAM_NAME, "Unable to work out the density of the disk inserted", "OK");
+                ShowMessage(GetString(MSG_PROGRAM_NAME), GetString(MSG_UNABLE_DENSITY), GetString(MSG_BUTTON_OK));
                 goto out;
             }
     }
@@ -198,47 +198,47 @@ void *writeFunction(void *arg)
     switch (result)
     {
     case ADFResult::adfrBadSCPFile:
-        ShowMessage(PROGRAM_NAME, "Bad, invalid or unsupported SCP file", "OK");
+        ShowMessage(PROGRAM_NAME, LS(BAD_SCP_FILE), LS(BUTTON_OK));
         break;
     case ADFResult::adfrComplete:
-        ShowMessage(PROGRAM_NAME, "File written to disk", "OK");
+        ShowMessage(PROGRAM_NAME, LS(FILE_WRITTEN), LS(BUTTON_OK));
         break;
     case ADFResult::adfrExtendedADFNotSupported:
-        ShowMessage(PROGRAM_NAME, "Extended ADF files are not currently supported", "OK");
+        ShowMessage(PROGRAM_NAME, LS(EXTENDED_ADF_NOT_SUPPORTED), LS(BUTTON_OK));
         break;
     case ADFResult::adfrMediaSizeMismatch:
         if (isIPF)
-            ShowMessage(PROGRAM_NAME, "IPF writing is only supported for DD disks and images", "OK");
+            ShowMessage(PROGRAM_NAME, LS(IPF_ONLY_DD), LS(BUTTON_OK));
         else if (isSCP)
-            ShowMessage(PROGRAM_NAME, "SCP writing is only supported for DD disks and images", "OK");
+            ShowMessage(PROGRAM_NAME, LS(SCP_ONLY_DD), LS(BUTTON_OK));
         else if (hdMode)
-            ShowMessage(PROGRAM_NAME, "Disk in drive was detected as HD, but a DD ADF file supplied", "OK");
+            ShowMessage(PROGRAM_NAME, LS(DISK_HD_FILE_DD), LS(BUTTON_OK));
         else
-            ShowMessage(PROGRAM_NAME, "Disk in drive was detected as DD, but an HD ADF file supplied", "OK");
+            ShowMessage(PROGRAM_NAME, LS(DISK_DD_FILE_HD), LS(BUTTON_OK));
         break;
     case ADFResult::adfrFirmwareTooOld:
-        ShowMessage(PROGRAM_NAME, "Cannot write this file, you need to upgrade the firmware first", "OK");
+        ShowMessage(PROGRAM_NAME, LS(FIRMWARE_TOO_OLD), LS(BUTTON_OK));
         break;
     case ADFResult::adfrCompletedWithErrors:
-        ShowMessage(PROGRAM_NAME, "File written to disk but there were errors during verification", "OK");
+        ShowMessage(PROGRAM_NAME, LS(FILE_WRITTEN_ERRORS), LS(BUTTON_OK));
         break;
     case ADFResult::adfrAborted:
-        ShowMessage(PROGRAM_NAME, "Writing aborted", "OK");
+        ShowMessage(PROGRAM_NAME, LS(WRITING_ABORTED), LS(BUTTON_OK));
         break;
     case ADFResult::adfrFileError:
-        ShowMessage(PROGRAM_NAME, "Error opening file", "OK");
+        ShowMessage(PROGRAM_NAME, LS(ERROR_OPENING_FILE), LS(BUTTON_OK));
         break;
     case ADFResult::adfrIPFLibraryNotAvailable:
-        ShowMessage(PROGRAM_NAME, "IPF CAPSImg from Software Preservation Society Library Missing", "OK");
+        ShowMessage(PROGRAM_NAME, LS(IPF_LIBRARY_MISSING), LS(BUTTON_OK));
         break;
     case ADFResult::adfrDriveError:
-        ShowMessage(PROGRAM_NAME, "Error communicating with the DrawBridge interface", "OK");
+        ShowMessage(PROGRAM_NAME, LS(ERROR_COMM_DRAWBRIDGE), LS(BUTTON_OK));
         break;
     case ADFResult::adfrDiskWriteProtected:
-        ShowMessage(PROGRAM_NAME, "Error, disk is write protected", "OK");
+        ShowMessage(PROGRAM_NAME, LS(DISK_WRITE_PROTECTED), LS(BUTTON_OK));
         break;
     default:
-        ShowMessage(PROGRAM_NAME, "An unknown error occurred ", "OK");
+        ShowMessage(PROGRAM_NAME, LS(UNKNOWN_ERROR), LS(BUTTON_OK));
         break;
     }
 out:
@@ -270,7 +270,7 @@ void *readFunction(void *arg)
 
     if (!taskWriter->openDevice(portName))
     {
-        ShowMessage(PROGRAM_NAME, "Error opening selected port", "OK");
+        ShowMessage(PROGRAM_NAME, LS(ERROR_OPENING_PORT), LS(BUTTON_OK));
         isReading = false;
         isWorking = false;
         return NULL;
@@ -284,7 +284,7 @@ void *readFunction(void *arg)
     {
         if (mode == MODE_SCP)
         {
-            ShowMessage(PROGRAM_NAME, "This requires firmware V1.8 or newer.", "OK");
+            ShowMessage(PROGRAM_NAME, LS(FIRMWARE_V18_REQUIRED_DOT), LS(BUTTON_OK));
             isReading = false;
             return NULL;
         }
@@ -298,7 +298,7 @@ void *readFunction(void *arg)
     {
         if (retryCounter > 20)
         {
-            int ret = ShowMessage(PROGRAM_NAME, "Disk has checksum errors/missing data.", "Retry|Ignore|Abort");
+            int ret = ShowMessage(PROGRAM_NAME, LS(DISK_CHECKSUM_ERROR), "Retry|Ignore|Abort");
             switch (ret)
             {
             case 0:
@@ -356,29 +356,29 @@ void *readFunction(void *arg)
     switch (result)
     {
     case ADFResult::adfrComplete:
-        ShowMessage(PROGRAM_NAME, "File created successfully", "OK");
+        ShowMessage(PROGRAM_NAME, LS(FILE_CREATED), LS(BUTTON_OK));
         break;
     case ADFResult::adfrAborted:
-        ShowMessage(PROGRAM_NAME, "File aborted", "OK");
+        ShowMessage(PROGRAM_NAME, LS(FILE_ABORTED), LS(BUTTON_OK));
         std::remove(file.c_str());
         break;
     case ADFResult::adfrFileError:
-        ShowMessage(PROGRAM_NAME, "Error creating file", "OK");
+        ShowMessage(PROGRAM_NAME, LS(ERROR_CREATING_FILE), LS(BUTTON_OK));
         break;
     case ADFResult::adfrFileIOError:
-        ShowMessage(PROGRAM_NAME, "Error writing to file", "OK");
+        ShowMessage(PROGRAM_NAME, LS(ERROR_WRITING_FILE), LS(BUTTON_OK));
         break;
     case ADFResult::adfrFirmwareTooOld:
-        ShowMessage(PROGRAM_NAME, "This requires firmware V1.8 or newer", "OK");
+        ShowMessage(PROGRAM_NAME, LS(FIRMWARE_V18_REQUIRED), LS(BUTTON_OK));
         break;
     case ADFResult::adfrCompletedWithErrors:
-        ShowMessage(PROGRAM_NAME, "File created with partial success", "OK");
+        ShowMessage(PROGRAM_NAME, LS(FILE_CREATED_PARTIAL), LS(BUTTON_OK));
         break;
     case ADFResult::adfrDriveError:
-        ShowMessage(PROGRAM_NAME, "Error communicating with the Arduino interface", "OK");
+        ShowMessage(PROGRAM_NAME, LS(ERROR_COMM_ARDUINO), LS(BUTTON_OK));
         break;
     default:
-        ShowMessage(PROGRAM_NAME, "An unknown error occured", "OK");
+        ShowMessage(PROGRAM_NAME, LS(UNKNOWN_ERROR_OCCURRED), LS(BUTTON_OK));
         break;
     }
 
@@ -402,7 +402,7 @@ void StartWrite(std::string portName, bool verify, bool pcw, int tracksA[83], in
     stopWorking = false;
     if (!std::filesystem::exists(fileNameWrite))
     {
-        ShowMessage(PROGRAM_NAME, "The selected file doesn't exists! Cannot write the file to floppy disk", "OK");
+        ShowMessage(PROGRAM_NAME, LS(FILE_DOESNT_EXIST), LS(BUTTON_OK));
         isWriting = false;
         return;
     }
@@ -431,7 +431,7 @@ void StartWrite(std::string portName, bool verify, bool pcw, int tracksA[83], in
     }
     if (mode < 0)
     {
-        ShowMessage("Error writing", "File extension not recognised. It must be one of: .ADF, .IMG, .IMA, .ST or .SCP", "OK");
+        ShowMessage("Error writing", LS(FILE_EXT_NOT_RECOGNIZED), LS(BUTTON_OK));
 
         isWriting = false;
         return;
@@ -468,7 +468,7 @@ void StartWrite(std::string portName, bool verify, bool pcw, int tracksA[83], in
     else
     {
         isWorking = false;
-        ShowMessage(PROGRAM_NAME, "Error allocating memory for the I/O thread", "OK");
+        ShowMessage(PROGRAM_NAME, LS(ERROR_ALLOCATING_MEMORY), LS(BUTTON_OK));
     }
     isWriting = false;
 }
@@ -504,7 +504,7 @@ void StartRead(std::string portName, bool verify, bool tracks82, int tracksA[83]
 
     if (mode < 0)
     {
-        ShowMessage(PROGRAM_NAME, "File extension not recognised. It must be one of: .ADF, .IMG, .IMA, .ST or .SCP", "OK");
+        ShowMessage(PROGRAM_NAME, LS(FILE_EXT_NOT_RECOGNIZED), LS(BUTTON_OK));
         isReading = false;
         return;
     }
@@ -538,7 +538,7 @@ void StartRead(std::string portName, bool verify, bool tracks82, int tracksA[83]
     else
     {
         isWorking = false;
-        ShowMessage(PROGRAM_NAME, "Error allocating memory for the I/O thread", "OK");
+        ShowMessage(PROGRAM_NAME, LS(ERROR_ALLOCATING_MEMORY), LS(BUTTON_OK));
     }
 
     isReading = false;

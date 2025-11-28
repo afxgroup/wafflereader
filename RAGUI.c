@@ -7,36 +7,40 @@
 
 Object *Objects[OBJ_MAX];
 #define OBJ(x) Objects[x]
-#define GAD(x) (struct Gadget *) Objects[x]
+#define GAD(x) (struct Gadget *)Objects[x]
 
-#define TRACKH  CHILD_MaxWidth, 25, \
-                CHILD_MaxHeight, 25, \
-                CHILD_MinWidth, 25, \
-                CHILD_MinHeight, 25, \
+#define TRACKH CHILD_MaxWidth, 25,  \
+               CHILD_MaxHeight, 25, \
+               CHILD_MinWidth, 25,  \
+               CHILD_MinHeight, 25,
 
-#define PALOBJ(X)   StartMember, OBJ(OBJ_TRACK_START + X) = PaletteObject, \
-                    GA_ID, OBJ_TRACK_START + X, \
-                    PALETTE_Color, 0, \
-                    PALETTE_NumColors, 1, \
-                    GA_UserData, 0, \
-                    PALETTE_RenderHook, &PaletteRenderHook, \
-                    EndMember, \
+#define PALOBJ(X) StartMember, OBJ(OBJ_TRACK_START + X) = PaletteObject,                     \
+                                                     GA_ID, OBJ_TRACK_START + X,             \
+                                                     PALETTE_Color, 0,                       \
+                                                     PALETTE_NumColors, 1,                   \
+                                                     GA_UserData, 0,                         \
+                                                     PALETTE_RenderHook, &PaletteRenderHook, \
+                                                     EndMember,
 
-static LONG PaletteRenderHookFunction(struct Hook *hook, APTR reserved, struct PBoxDrawMsg *msg) {
+static LONG PaletteRenderHookFunction(struct Hook *hook, APTR reserved, struct PBoxDrawMsg *msg)
+{
     struct RastPort *rp;
     struct Rectangle *rect;
 
     rp = msg->pbdm_RastPort;
     rect = &(msg->pbdm_Bounds);
-    LONG pen = (LONG) msg->pbdm_Gadget->UserData;
+    LONG pen = (LONG)msg->pbdm_Gadget->UserData;
 
-    if (pen == 1) {
+    if (pen == 1)
+    {
         RectFillColor(rp, rect->MinX, rect->MinY, rect->MaxX, rect->MaxY, 0x0002b505);
     }
-    else if (pen == 2) {
+    else if (pen == 2)
+    {
         RectFillColor(rp, rect->MinX, rect->MinY, rect->MaxX, rect->MaxY, 0x00CD0404);
     }
-    else {
+    else
+    {
         SetAPen(rp, 0);
         RectFill(rp, rect->MinX, rect->MinY, rect->MaxX, rect->MaxY);
     }
@@ -45,45 +49,50 @@ static LONG PaletteRenderHookFunction(struct Hook *hook, APTR reserved, struct P
 }
 
 static struct Hook PaletteRenderHook = {
-    { NULL, NULL },
-    (HOOKFUNC) PaletteRenderHookFunction,
-    NULL,NULL
-};
+    {NULL, NULL},
+    (HOOKFUNC)PaletteRenderHookFunction,
+    NULL,
+    NULL};
 
+#define TRACK(X) \
+    TRACKH       \
+    PALOBJ(X)
 
-#define TRACK(X)    TRACKH \
-                    PALOBJ(X)
-
-                 
 static void
-GetArchive(int archiveType, struct Window *window) {
+GetArchive(int archiveType, struct Window *window)
+{
     int aslType = archiveType == 0 ? OBJ_SELECT_READ_FILE : OBJ_SELECT_WRITE_FILE;
-	ULONG temp;
+    ULONG temp;
 
-	if (gfRequestFile(OBJ(aslType), (ULONG) window)) {
+    if (gfRequestFile(OBJ(aslType), (ULONG)window))
+    {
         GetAttr(GETFILE_FullFile, OBJ(aslType), &temp);
-        if (temp) {
+        if (temp)
+        {
             if (archiveType == 0)
-                strlcpy(fileNameRead, (char *) temp, PATH_MAX);
+                strlcpy(fileNameRead, (char *)temp, PATH_MAX);
             else
-                strlcpy(fileNameWrite, (char *) temp, PATH_MAX);
+                strlcpy(fileNameWrite, (char *)temp, PATH_MAX);
         }
     }
 }
 
-int main( void )
+int main(void)
 {
-	struct Window *window;
-	ULONG signal, result;
-	ULONG done = FALSE;
+    struct Window *window;
+    ULONG signal, result;
+    ULONG done = FALSE;
     const char *portList[MAX_PORTS];
     int portNumbers = 0, portIndex = -1;
     bool verify = true, pcw = true, tracks82 = false, hdSelection = false;
     int tracksA[83] = {0}, tracksB[83] = {0};
 
+    InitLocaleLibrary();
+
     struct Screen *screen = LockPubScreen(NULL);
-    if (screen == NULL) {
-        DebugPrintF("Failed to lock public screen\n");
+    if (screen == NULL)
+    {
+        DebugPrintF("%s\n", GetString(MSG_DEBUG_FAILED_LOCK_SCREEN));
         return 0;
     }
 
@@ -92,11 +101,13 @@ int main( void )
 
     std::vector<std::string> portsList;
     ArduinoFloppyReader::ArduinoInterface::enumeratePorts(portsList);
-    if (portsList.size() > 0) {
-        for (const std::string &port : portsList) {
-            portList[portNumbers] = (const char *) malloc(128);
-            memset((void *) portList[portNumbers], 0, 128);
-            strncpy((char *) portList[portNumbers], port.c_str(), 127);
+    if (portsList.size() > 0)
+    {
+        for (const std::string &port : portsList)
+        {
+            portList[portNumbers] = (const char *)malloc(128);
+            memset((void *)portList[portNumbers], 0, 128);
+            strncpy((char *)portList[portNumbers], port.c_str(), 127);
             portNumbers++;
             if (portNumbers == MAX_PORTS - 1)
                 break;
@@ -105,15 +116,15 @@ int main( void )
     }
 
     OBJ(OBJ_MENU) = MStrip,
-        MA_AddChild, MTitle("Project"),
-            MA_AddChild, MItem("A|About"),
+        MA_AddChild, MTitle(GetString(MSG_MENU_PROJECT)),
+            MA_AddChild, MItem(GetString(MSG_MENU_ABOUT)),
                 MA_ID, MID_ABOUT,
             MEnd,
 
             MA_AddChild, MSeparator,
             MEnd,
 
-            MA_AddChild, MItem("Q|Quit"),
+            MA_AddChild, MItem(GetString(MSG_MENU_QUIT)),
                 MA_ID, MID_QUIT,
             MEnd,
         MEnd,
@@ -148,7 +159,7 @@ int main( void )
                 LAYOUT_AddChild, OBJ(OBJ_LEFT_COL) = VLayoutObject,
                     LAYOUT_AddChild, VLayoutObject,
                         LAYOUT_BevelStyle, BVS_GROUP,
-                        LAYOUT_Label, " Write ADF to Disk ",
+                        LAYOUT_Label, GetString(MSG_GROUP_WRITE_ADF),
                         LAYOUT_AddChild, VLayoutObject,
                             LAYOUT_HorizAlignment, LALIGN_CENTER,
                             LAYOUT_AddChild, HLayoutObject,
@@ -160,7 +171,7 @@ int main( void )
                                     GETFILE_RejectIcons,    TRUE,
                                     GETFILE_DoPatterns,     TRUE,
                                     GETFILE_Pattern,        FILTER_PATTERN,
-                                    GETFILE_TitleText,      "Select file to read from disk",
+                                    GETFILE_TitleText,      GetString(MSG_SELECT_FILE_READ_DISK),
                                 End,
                             End,
                             LAYOUT_AddChild, HLayoutObject,
@@ -169,21 +180,21 @@ int main( void )
                                     GA_RelVerify,   TRUE,
                                     GA_TabCycle,    TRUE,
                                     GA_Selected,    TRUE,
-                                    GA_Text,        "Verify",
+                                    GA_Text,        GetString(MSG_VERIFY),
                                 End,
                                 LAYOUT_AddChild, OBJ(OBJ_WRITE_PCW) = CheckBoxObject,
                                     GA_ID,          OBJ_WRITE_PCW,
                                     GA_RelVerify,   TRUE,
                                     GA_TabCycle,    TRUE,
                                     GA_Selected,    TRUE,
-                                    GA_Text,        "PCW",
+                                    GA_Text,        GetString(MSG_PCW),
                                 End,
                             End,
                             LAYOUT_AddChild, OBJ(OBJ_START_WRITE) = ButtonObject,
                                 GA_ID, OBJ_START_WRITE,
                                 GA_TabCycle, TRUE,
                                 GA_RelVerify, TRUE,
-                                GA_Text, "Start Write",
+                                GA_Text, GetString(MSG_START_WRITE),
                                 GA_Disabled, portNumbers == 0,
                             End,
                             CHILD_WeightedWidth, 0,
@@ -193,7 +204,7 @@ int main( void )
                     CHILD_MinWidth, 300,
                     LAYOUT_AddChild, VLayoutObject,
                         LAYOUT_BevelStyle, BVS_GROUP,
-                        LAYOUT_Label, " Create ADF from Disk ",
+                        LAYOUT_Label, GetString(MSG_GROUP_CREATE_ADF),
                         LAYOUT_AddChild, VLayoutObject,
                             LAYOUT_HorizAlignment, LALIGN_CENTER,
                             LAYOUT_AddChild, OBJ(OBJ_SELECT_READ_FILE) = GetFileObject,
@@ -202,7 +213,7 @@ int main( void )
                                 GA_TabCycle,            TRUE,
                                 GETFILE_ReadOnly,       TRUE,
                                 GETFILE_RejectIcons,    TRUE,
-                                GETFILE_TitleText,      "Select file to write to disk",
+                                GETFILE_TitleText,      GetString(MSG_SELECT_FILE_WRITE_DISK),
                                 GETFILE_DoPatterns,     TRUE,
                                 GETFILE_Pattern,        FILTER_PATTERN,
                             End,
@@ -211,14 +222,14 @@ int main( void )
                                     GA_ID, OBJ_READ_TRACKS82,
                                     GA_TabCycle, TRUE,
                                     GA_RelVerify, TRUE,
-                                    GA_Text, "82 Tracks",
+                                    GA_Text, GetString(MSG_82_TRACKS),
                                 End,
                             End,
                             LAYOUT_AddChild, OBJ(OBJ_START_READ) = ButtonObject,
                                 GA_ID, OBJ_START_READ,
                                 GA_TabCycle, TRUE,
                                 GA_RelVerify, TRUE,
-                                GA_Text, "Start Read",
+                                GA_Text, GetString(MSG_START_READ),
                                 GA_Disabled, portNumbers == 0,
                             End,
                             CHILD_WeightedWidth, 0,
@@ -230,7 +241,7 @@ int main( void )
                     TAligned,
                     LAYOUT_AddChild, VLayoutObject,
                         LAYOUT_BevelStyle, BVS_GROUP,
-                        LAYOUT_Label, " UPPER SIDE ",
+                        LAYOUT_Label, GetString(MSG_GROUP_UPPER_SIDE),
                         LAYOUT_FixedHoriz, TRUE,
                         /* Tracks Row 1 */
                         StartHGroup,
@@ -358,7 +369,7 @@ int main( void )
                 End,
                 LAYOUT_AddChild, VLayoutObject,
                     LAYOUT_BevelStyle, BVS_GROUP,
-                    LAYOUT_Label, " LOWER SIDE ",
+                    LAYOUT_Label, GetString(MSG_GROUP_LOWER_SIDE),
                     LAYOUT_FixedHoriz, TRUE,
                     /* Tracks Row 1 */
                     StartHGroup,
@@ -493,7 +504,7 @@ int main( void )
                     CHOOSER_Selected, 0,
                     GA_Underscore,
                 End,
-                Label("Waffle Serial Port"),
+                Label(GetString(MSG_WAFFLE_SERIAL_PORT)),
                 LAYOUT_AddChild, SpaceObject,
                     SPACE_MinWidth, 100,
                 End,
@@ -501,140 +512,160 @@ int main( void )
                     GA_ID, OBJ_HD_MODE,
                     GA_TabCycle, TRUE,
                     GA_RelVerify, TRUE,
-                    GA_Text, "High Density disk selection",
+                    GA_Text, GetString(MSG_HIGH_DENSITY_SELECTION),
                 End,
                 CHILD_NominalSize, TRUE,
             End,
         End,
     EndWindow;
 
-    if (OBJ(OBJ_MAIN_WINDOW)) {
-		if (window = (struct Window*) IDoMethod(OBJ(OBJ_MAIN_WINDOW), WM_OPEN)) {
-			ULONG wait, temp, id;
+    if (OBJ(OBJ_MAIN_WINDOW))
+    {
+        if (window = (struct Window *)IDoMethod(OBJ(OBJ_MAIN_WINDOW), WM_OPEN))
+        {
+            ULONG wait, temp, id;
             WORD code;
 
-			GetAttr(WINDOW_SigMask, OBJ(OBJ_MAIN_WINDOW), &signal);
-			while (!done) {
-				wait = Wait(signal|SIGBREAKF_CTRL_C);
+            GetAttr(WINDOW_SigMask, OBJ(OBJ_MAIN_WINDOW), &signal);
+            while (!done)
+            {
+                wait = Wait(signal | SIGBREAKF_CTRL_C);
 
-				if (wait & SIGBREAKF_CTRL_C)
+                if (wait & SIGBREAKF_CTRL_C)
                     done = TRUE;
-				else {
-                    while ((result = IDoMethod(OBJ(OBJ_MAIN_WINDOW), WM_HANDLEINPUT, &code))) {
-                        switch (result & WMHI_CLASSMASK) {
-                            case WMHI_IGNORE:
-					            continue;
-                            case WMHI_CLOSEWINDOW:
-                                done = TRUE;
-                                break;
+                else
+                {
+                    while ((result = IDoMethod(OBJ(OBJ_MAIN_WINDOW), WM_HANDLEINPUT, &code)))
+                    {
+                        switch (result & WMHI_CLASSMASK)
+                        {
+                        case WMHI_IGNORE:
+                            continue;
+                        case WMHI_CLOSEWINDOW:
+                            done = TRUE;
+                            break;
 
-                            case WMHI_MENUPICK:
-                                id = NO_MENU_ID;
-                                while ((id = IDoMethod(OBJ(OBJ_MENU), MM_NEXTSELECT, 0, id)) != NO_MENU_ID)
+                        case WMHI_MENUPICK:
+                            id = NO_MENU_ID;
+                            while ((id = IDoMethod(OBJ(OBJ_MENU), MM_NEXTSELECT, 0, id)) != NO_MENU_ID)
+                            {
+                                switch (id)
                                 {
-                                   switch (id)
-                                   {
-                                      case MID_ABOUT:
-                                         ShowMessage(PROGRAM_NAME, "Waffle Copy Professional\n\nVersion 2.8.8\n\n(c) 2025 Amigasoft.net\n(c) 2025 Acube Systems", "OK");
-                                         break;
-           
-                                      case MID_QUIT:
-                                         done = TRUE;
-                                         break;
-                                   }
+                                case MID_ABOUT:
+                                    ShowMessage(PROGRAM_NAME, GetString(MSG_ABOUT_TEXT), GetString(MSG_BUTTON_OK));
+                                    break;
+
+                                case MID_QUIT:
+                                    done = TRUE;
+                                    break;
+                                }
+                            }
+                            break;
+
+                        case WMHI_GADGETUP:
+                            switch (result & WMHI_GADGETMASK)
+                            {
+                            case OBJ_SELECT_READ_FILE:
+                                GetArchive(0, window);
+                                break;
+                            case OBJ_SELECT_WRITE_FILE:
+                                GetArchive(1, window);
+                                break;
+                            case OBJ_WRITE_VERIFY:
+                                verify = code;
+                                break;
+                            case OBJ_WRITE_PCW:
+                                pcw = code;
+                                break;
+                            case OBJ_READ_TRACKS82:
+                                tracks82 = code;
+                                break;
+                            case OBJ_HD_MODE:
+                                hdSelection = code;
+                                break;
+                            case OBJ_PORT_LIST:
+                                portIndex = code;
+                                break;
+                            case OBJ_START_READ:
+                                if (portIndex >= 0)
+                                {
+                                    if (fileNameRead != NULL && !fileNameRead[0] == '\0')
+                                    {
+                                        if (!isWorking)
+                                            StartRead(portList[portIndex], verify, tracks82, tracksA, tracksB, window);
+                                        else
+                                        {
+                                            isWorking = FALSE;
+                                        }
+                                    }
+                                    else
+                                        ShowMessage(PROGRAM_NAME, GetString(MSG_ENTER_FILENAME_READ), GetString(MSG_BUTTON_OK));
+                                }
+                                else
+                                {
+                                    ShowMessage(PROGRAM_NAME, GetString(MSG_NO_PORT_SELECTED), GetString(MSG_BUTTON_OK));
                                 }
                                 break;
-
-                            case WMHI_GADGETUP:
-                                switch (result & WMHI_GADGETMASK)
+                            case OBJ_START_WRITE:
+                                if (portIndex >= 0)
                                 {
-                                    case OBJ_SELECT_READ_FILE:
-                                        GetArchive(0, window);
-                                        break;
-                                    case OBJ_SELECT_WRITE_FILE:
-                                        GetArchive(1, window);
-                                        break;
-                                    case OBJ_WRITE_VERIFY:
-                                        verify = code;
-                                        break;
-                                    case OBJ_WRITE_PCW:
-                                        pcw = code;
-                                        break;
-                                    case OBJ_READ_TRACKS82:
-                                        tracks82 = code;
-                                        break;
-                                    case OBJ_HD_MODE:
-                                        hdSelection = code;
-                                        break;
-                                    case OBJ_PORT_LIST:
-                                        portIndex = code;
-                                        break;
-                                    case OBJ_START_READ:
-                                        if (portIndex >= 0) {
-                                            if (fileNameRead != NULL && !fileNameRead[0] == '\0') {
-                                                if (!isWorking)
-                                                    StartRead(portList[portIndex], verify, tracks82, tracksA, tracksB, window);
-                                                else {
-                                                    isWorking = FALSE;
-                                                }
-                                            }
-                                            else
-                                                ShowMessage(PROGRAM_NAME, "Please enter filename to read", "OK");
+                                    if (fileNameWrite != NULL && !fileNameWrite[0] == '\0')
+                                    {
+                                        if (!isWorking)
+                                            StartWrite(portList[portIndex], verify, pcw, tracksA, tracksB, window);
+                                        else
+                                        {
+                                            isWorking = FALSE;
                                         }
-                                        else {
-                                            ShowMessage(PROGRAM_NAME, "No COM port selected", "OK");
-                                        }
-                                        break;
-                                    case OBJ_START_WRITE:
-                                        if (portIndex >= 0) {
-                                            if (fileNameWrite != NULL && !fileNameWrite[0] == '\0') {
-                                                if (!isWorking)
-                                                    StartWrite(portList[portIndex], verify, pcw, tracksA, tracksB, window);
-                                                else {
-                                                    isWorking = FALSE;
-                                                }
-                                            }
-                                            else
-                                                ShowMessage(PROGRAM_NAME, "Please enter filename to write", "OK");
-                                        }
-                                        else {
-                                            ShowMessage(PROGRAM_NAME, "No COM port selected", "OK");
-                                        }
-                                        break;
-                                    default:
-                                        Printf("Gadget %ld\n", result & WMHI_GADGETMASK);
+                                    }
+                                    else
+                                        ShowMessage(PROGRAM_NAME, GetString(MSG_ENTER_FILENAME_WRITE), GetString(MSG_BUTTON_OK));
+                                }
+                                else
+                                {
+                                    ShowMessage(PROGRAM_NAME, GetString(MSG_NO_PORT_SELECTED), GetString(MSG_BUTTON_OK));
                                 }
                                 break;
+                            default:
+                                Printf(GetString(MSG_DEBUG_UNKNOWN_GADGET), result & WMHI_GADGETMASK);
+                            }
+                            break;
                         }
                     }
                 }
-			}
-		}
-        else {
-            Printf("Failed to open main window\n");
+            }
+        }
+        else
+        {
+            Printf("%s\n", GetString(MSG_ERROR_FAILED_OPEN_WINDOW));
         }
 
         if (OBJ(OBJ_LOGO_IMAGE))
             DisposeObject(OBJ(OBJ_LOGO_IMAGE));
 
-		/* Disposing of the window object will
-		 * also close the window if it is
-		 * already opened and it will dispose of
-		 * all objects attached to it.
-		 */
-		DisposeObject( OBJ(OBJ_MAIN_WINDOW) );
-	}
-    else {
-        Printf("Failed to create main window\n");
+        /* Disposing of the window object will
+         * also close the window if it is
+         * already opened and it will dispose of
+         * all objects attached to it.
+         */
+        DisposeObject(OBJ(OBJ_MAIN_WINDOW));
+    }
+    else
+    {
+        Printf("%s\n", GetString(MSG_ERROR_FAILED_CREATE_WINDOW));
     }
 
     if (screen)
         UnlockPubScreen(NULL, screen);
 
-    if (portNumbers > 0) {
-        for (int i = 0; i < portNumbers; i++) {
+    if (portNumbers > 0)
+    {
+        for (int i = 0; i < portNumbers; i++)
+        {
             if (portList[i] != NULL)
                 free((void *)portList[i]);
         }
     }
+
+    CloseLocaleLibrary();
 }

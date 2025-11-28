@@ -1,0 +1,340 @@
+## version $VER: waffle.ct 1.0 (27.11.2025) (C) 2025 Andrea Palmate'
+## language italiano
+## codeset 111
+;
+MSG_PROGRAM_NAME
+Waffle Copy Professional
+;
+MSG_SELECT_ADF_WRITE
+Seleziona ADF da scrivere su Waffle
+;
+MSG_SELECT_FILE_READ
+Seleziona nome file da leggere da Waffle
+;
+MSG_START_WRITE
+Inizia Scrittura
+;
+MSG_START_READ
+Inizia Lettura
+;
+MSG_STOP
+Stop
+;
+MSG_VERIFY
+Verifica
+;
+MSG_PCW
+PCW
+;
+MSG_TRACKS_82
+Tracce: 82
+;
+MSG_HD_DISK_SELECTION
+SELEZIONE DISCO ALTA DENSITA'
+;
+MSG_WAFFLE_DRIVE_PORT
+PORTA DRIVE WAFFLE: 
+;
+MSG_FILE_TO_DISK
+File su Disco
+;
+MSG_DISK_TO_FILE
+Disco su File
+;
+MSG_MENU_PROJECT
+Progetto
+;
+MSG_MENU_ABOUT
+A|Informazioni
+;
+MSG_MENU_QUIT
+Q|Esci
+;
+MSG_GROUP_WRITE_ADF
+Scrivi ADF su Disco
+;
+MSG_GROUP_CREATE_ADF
+Crea ADF da Disco
+;
+MSG_GROUP_UPPER_SIDE
+LATO SUPERIORE
+;
+MSG_GROUP_LOWER_SIDE
+LATO INFERIORE
+;
+MSG_SELECT_FILE_READ_DISK
+Seleziona file da leggere dal disco
+;
+MSG_SELECT_FILE_WRITE_DISK
+Seleziona file da scrivere su disco
+;
+MSG_82_TRACKS
+82 Tracce
+;
+MSG_HIGH_DENSITY_SELECTION
+Selezione disco alta densita'
+;
+MSG_WAFFLE_SERIAL_PORT
+Porta Seriale Waffle
+;
+MSG_ENTER_FILENAME_READ
+Inserire il nome del file da leggere
+;
+MSG_ENTER_FILENAME_WRITE
+Inserire il nome del file da scrivere
+;
+MSG_NO_PORT_SELECTED
+Nessuna porta COM selezionata
+;
+MSG_ABOUT_TEXT
+Waffle Copy Professional\n\nVersione 2.8.8\n\n(c) 2025 Amigasoft.net\n(c) 2025 Acube Systems
+;
+MSG_BUTTON_OK
+OK
+;
+MSG_BUTTON_RETRY
+Riprova
+;
+MSG_BUTTON_IGNORE
+Ignora
+;
+MSG_BUTTON_ABORT
+Annulla
+;
+MSG_BUTTONS_RETRY_IGNORE_ABORT
+Riprova|Ignora|Annulla
+;
+MSG_ERROR_OPENING_PORT
+Errore apertura porta selezionata
+;
+MSG_ERROR_COMM_DRAWBRIDGE
+Errore comunicazione con interfaccia DrawBridge
+;
+MSG_ERROR_COMM_ARDUINO
+Errore comunicazione con interfaccia Arduino
+;
+MSG_ERROR_ALLOCATING_MEMORY
+Errore allocazione memoria per thread I/O
+;
+MSG_UNABLE_CONNECT_DEVICE
+Impossibile connettersi al dispositivo: 
+;
+MSG_FILE_DOESNT_EXIST
+Il file selezionato non esiste! Impossibile scrivere il file sul floppy disk
+;
+MSG_ERROR_OPENING_FILE
+Errore apertura file
+;
+MSG_ERROR_CREATING_FILE
+Errore creazione file
+;
+MSG_ERROR_WRITING_FILE
+Errore scrittura su file
+;
+MSG_FILE_EXT_NOT_RECOGNIZED
+Estensione file non riconosciuta. Deve essere: .ADF, .IMG, .IMA, .ST o .SCP
+;
+MSG_FILE_EXT_NOT_RECOGNIZED_WRITE
+Estensione file non riconosciuta. Deve essere: .ADF, .IMG, .IMA, .ST, .SCP o .IPF
+;
+MSG_DISK_WRITE_PROTECTED
+Errore, disco protetto da scrittura
+;
+MSG_DISK_VERIFY_ERROR
+Errore verifica scrittura disco sulla traccia corrente
+;
+MSG_DISK_CHECKSUM_ERROR
+Il disco ha errori di checksum/dati mancanti.
+;
+MSG_UNABLE_DENSITY
+Impossibile determinare la densita' del disco inserito
+;
+MSG_WARNING_VERIFY_RECOMMENDED
+ATTENZIONE: E' FORTEMENTE raccomandato scrivere con verifica attivata
+;
+MSG_FILE_WRITTEN
+File scritto su disco
+;
+MSG_FILE_CREATED
+File creato con successo
+;
+MSG_FILE_WRITTEN_ERRORS
+File scritto su disco ma ci sono stati errori durante la verifica
+;
+MSG_FILE_CREATED_PARTIAL
+File creato con successo parziale
+;
+MSG_WRITING_ABORTED
+Scrittura annullata
+;
+MSG_FILE_ABORTED
+File annullato
+;
+MSG_BAD_SCP_FILE
+File SCP errato, non valido o non supportato
+;
+MSG_EXTENDED_ADF_NOT_SUPPORTED
+File ADF estesi non sono attualmente supportati
+;
+MSG_IPF_ONLY_DD
+Scrittura IPF e' supportata solo per dischi e immagini DD
+;
+MSG_SCP_ONLY_DD
+Scrittura SCP e' supportata solo per dischi e immagini DD
+;
+MSG_DISK_HD_FILE_DD
+Disco nel drive rilevato come HD, ma fornito file ADF DD
+;
+MSG_DISK_DD_FILE_HD
+Disco nel drive rilevato come DD, ma fornito file ADF HD
+;
+MSG_FIRMWARE_TOO_OLD
+Impossibile scrivere questo file, devi aggiornare il firmware prima
+;
+MSG_FIRMWARE_V18_REQUIRED
+Richiede firmware V1.8 o successivo
+;
+MSG_FIRMWARE_V18_REQUIRED_DOT
+Richiede firmware V1.8 o successivo.
+;
+MSG_FIRMWARE_V19_REQUIRED
+Questa funzionalita' richiede firmware V1.9
+;
+MSG_FIRMWARE_RECOMMEND_V18
+Rob consiglia vivamente di aggiornare il firmware del tuo Arduino almeno alla V1.8.
+;
+MSG_FIRMWARE_BETTER_READING
+Questa versione e' ancora migliore nella lettura di vecchi dischi.
+;
+MSG_IPF_LIBRARY_MISSING
+Libreria IPF CAPSImg dalla Software Preservation Society mancante
+;
+MSG_UNKNOWN_ERROR
+Si e' verificato un errore sconosciuto 
+;
+MSG_UNKNOWN_ERROR_OCCURRED
+Si e' verificato un errore sconosciuto
+;
+MSG_USAGE
+Uso: %s %s
+;
+MSG_NO_FILE_SPECIFIED
+Nessun file specificato.
+;
+MSG_WRITING_FILE_TO_DISK
+Scrittura file %s su disco
+;
+MSG_CREATING_FILE_FROM_DISK
+Creazione file %s da disco
+;
+MSG_PROGRESS
+Progresso: %i%%    
+;
+MSG_CLEANING_COMPLETED
+Ciclo di pulizia completato.
+;
+MSG_RUNNING_DIAGNOSTICS
+Esecuzione diagnostica su porta COM: %s
+;
+MSG_DIAGNOSTICS_FAILED
+DIAGNOSTICA FALLITA: %s
+;
+MSG_RUNNING_CLEANING
+Esecuzione pulizia testina drive su porta COM: %s
+;
+MSG_ATTEMPTING_READ_SETTINGS
+Tentativo lettura impostazioni da dispositivo su porta: %s
+;
+MSG_ATTEMPTING_SET_SETTINGS
+Tentativo impostazione configurazione su dispositivo su porta: %s
+;
+MSG_SETTING_SET
+Impostazione effettuata. Le impostazioni correnti sono:
+;
+MSG_SETTING_NOT_FOUND
+Impostazione %s non trovata.
+;
+MSG_WRITING_TRACK
+Scrittura Traccia %i, lato %s     
+;
+MSG_READING_TRACK
+Lettura %s Traccia %i, lato %s   
+;
+MSG_READING_TRACK_DETAILED
+Lettura %s Traccia %i, lato %s (tentativi: %i) - Ottenuti %i/%i settori (%i errati trovati)   
+;
+MSG_SIDE_UPPER
+Superiore
+;
+MSG_SIDE_LOWER
+Inferiore
+;
+MSG_DD
+DD
+;
+MSG_HD
+HD
+;
+MSG_DISK_VERIFY_ERROR_PROMPT
+Errore verifica scrittura disco sulla traccia %i, lato %s. [R]iprova, [S]alta, [A]nnulla?                                   
+;
+MSG_CHECKSUM_ERROR_PROMPT
+Il disco ha errori di checksum/dati mancanti. [R]iprova, [I]gnora, [A]nnulla?                                      
+;
+MSG_BANNER_LINE1
+DrawBridge aka Arduino Floppy Disk Reader/Writer V2.8.8, Copyright (C) 2017-2022 Robert Smith
+;
+MSG_BANNER_LINE2
+Codice sorgente completo e documentazione su https://amiga.robsmithdev.co.uk
+;
+MSG_BANNER_LINE3
+Questo e' un software libero rilasciato sotto GNU General Public Licence V3
+;
+MSG_BANNER_LINE4
+Versione AmigaOS4 di Andrea Palmate' - os4test@amigasoft.net
+;
+MSG_FLOATING_TEXT
+--- WAFFLE Copy Professional -- La soluzione essenziale USB floppy drive per il vero utente Amiga. Ti permette di scrivere da file ADF, di leggere floppy disk come ADF, IPF, IMA, IMG, ST e formato SCP e, grazie a una versione specifica di Emulatore Amiga, come WinUAE (di Toni Wilen) o AmiBerry (di MiDWaN), funziona come un vero drive Amiga permettendoti di leggere e scrivere direttamente i tuoi floppy attraverso un emulatore! A volte potresti aver bisogno di un cavo USB speciale (Tipo-Y) con la possibilita' di doppia alimentazione se la porta USB del PC non e' abbastanza potente.
+;
+MSG_SETTING_DISKCHANGE_NAME
+DISKCHANGE
+;
+MSG_SETTING_DISKCHANGE_DESC
+Forza Supporto Rilevamento Cambio Disco (usato se pin 12 non e' connesso a GND)
+;
+MSG_SETTING_PLUS_NAME
+PLUS
+;
+MSG_SETTING_PLUS_DESC
+Imposta Modalita' DrawBridge Plus (quando Pin 4 e 8 sono scambiati per maggiore precisione)
+;
+MSG_SETTING_ALLDD_NAME
+ALLDD
+;
+MSG_SETTING_ALLDD_DESC
+Forza Rilevamento Dischi come Doppia Densita' (piu' veloce se non serve supporto HD)
+;
+MSG_SETTING_SLOW_NAME
+SLOW
+;
+MSG_SETTING_SLOW_DESC
+Usa Ricerca Disco Piu' Lenta (per drive floppy con testina lenta - raro)
+;
+MSG_SETTING_INDEX_NAME
+INDEX
+;
+MSG_SETTING_INDEX_DESC
+Allinea Sempre Scrittura Dischi all'Indice (non raccomandato a meno che tu sappia cosa stai facendo)
+;
+MSG_DEBUG_FAILED_LOCK_SCREEN
+Impossibile bloccare lo schermo pubblico
+;
+MSG_ERROR_FAILED_OPEN_WINDOW
+Impossibile aprire la finestra principale
+;
+MSG_ERROR_FAILED_CREATE_WINDOW
+Impossibile creare la finestra principale
+;
+MSG_DEBUG_UNKNOWN_GADGET
+Gadget %ld
+;

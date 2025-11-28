@@ -24,6 +24,7 @@
 #include "ArduinoInterface.h"
 
 #include "common.hpp"
+#include "locale_support.h"
 
 #include <proto/exec.h>
 #include <exec/types.h>
@@ -37,6 +38,8 @@ extern ADFWriter writer;
 
 int main(int argc, char *argv[])
 {
+	InitLocaleLibrary();
+
 	// Define the template for ReadArgs
 	const char *argsTemplate = "COMPORT/K,FILE/K,WRITE/S,VERIFY/S,NOBANNER/S,LISTSERIALS/S,DIAGNOSTIC/S,CLEAN/S,SETTINGS/S,SETTINGNAME/K,SETTINGVALUE/S";
 	struct RDArgs *rdargs;
@@ -71,10 +74,10 @@ int main(int argc, char *argv[])
 	/* If NOBANNER is specified avoid to print all informations */
 	if (!shell_args.nobanner)
 	{
-		printf("DrawBridge aka Arduino Floppy Disk Reader/Writer V2.8.8, Copyright (C) 2017-2022 Robert Smith\n");
-		printf("Full sourcecode and documentation at https://amiga.robsmithdev.co.uk\n");
-		printf("This is free software licenced under the GNU General Public Licence V3\n");
-		printf("AmigaOS4 version by Andrea Palmate' - os4test@amigasoft.net\n");
+		printf("%s\n", GetString(MSG_BANNER_LINE1));
+		printf("%s\n", GetString(MSG_BANNER_LINE2));
+		printf("%s\n", GetString(MSG_BANNER_LINE3));
+		printf("%s\n", GetString(MSG_BANNER_LINE4));
 	}
 
 	/* Print serial ports and exit */
@@ -99,7 +102,8 @@ int main(int argc, char *argv[])
 	{
         if (!shell_args.nobanner)
             printf("\n");
-		printf("Usage: %s %s\n", argv[0], argsTemplate);
+		printf(GetString(MSG_USAGE), argv[0], argsTemplate);
+		printf("\n");
 		if (rdargs)
 		{
 			FreeArgs(rdargs);
@@ -114,7 +118,7 @@ int main(int argc, char *argv[])
 	if (!shell_args.settings && !shell_args.diagnostic && !shell_args.clean) {
 		if (shell_args.file == NULL)
 		{
-			printf("No file specified.\n");
+			printf("%s\n", GetString(MSG_NO_FILE_SPECIFIED));
 			if (rdargs)
 			{
 				FreeArgs(rdargs);
@@ -168,7 +172,7 @@ int main(int argc, char *argv[])
 
 	if (!writer.openDevice(port))
 	{
-		printf("\rError opening COM port: %s  ", writer.getLastError().c_str());
+		printf("\r%s: %s  ", GetString(MSG_ERROR_OPENING_PORT), writer.getLastError().c_str());
 	}
 	else
 	{
@@ -185,5 +189,8 @@ int main(int argc, char *argv[])
 	{
 		FreeArgs(rdargs);
 	}
+
+	CloseLocaleLibrary();
+
 	return 0;
 }
